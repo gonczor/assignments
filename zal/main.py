@@ -1,4 +1,4 @@
-#from PIL import Image
+from PIL import Image
 
 
 class Wells:
@@ -30,9 +30,12 @@ class WellsPositioning:
     def __search_best_position__(self, well):
         for row in range(well.get_radius(), len(self.__water_quality__) - well.get_radius()):
             for col in range(well.get_radius(), len(self.__water_quality__[row]) - well.get_radius()):
-                if self.__count_water_quality__(row, col, well) > 20:
+                if self.__water_quality_is_sufficient__(row, col, well):
                     well.set_position(col, row)
                     return
+
+    def __water_quality_is_sufficient__(self, row, col, well):
+        return self.__count_water_quality__(row, col, well) > 20
 
     def __count_water_quality__(self, row, col, well):
         # TODO To be implemented actually
@@ -91,7 +94,7 @@ def show_result(wells):
 
 
 if __name__ == '__main__':
-    radius, water_quality = get_settings2()
+    radius, water_quality = get_settings()
     wells = create_wells(radius)
     positioning = WellsPositioning(wells, water_quality)
     positioning.position()
