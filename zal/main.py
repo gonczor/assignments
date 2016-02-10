@@ -11,7 +11,7 @@ class Wells:
         self.__horizontal_position__ = horizontal
         self.__vertical_position__ = vertical
 
-    def get_position(self):
+    def get_position_str(self):
         return str("{0} {1}".format(self.__horizontal_position__, self.__vertical_position__))
 
     def get_radius(self):
@@ -89,7 +89,7 @@ def create_wells(r):
 
 def show_result(wells):
     for well in wells:
-        print(well.get_position())
+        print(well.get_position_str())
     pass
 
 
