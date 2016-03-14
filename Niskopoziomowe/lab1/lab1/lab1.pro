@@ -9,3 +9,6 @@ SOURCES += main.c \
 HEADERS += \
     tasks.h
 
+OTHER_FILES += \
+    README.txt
+
