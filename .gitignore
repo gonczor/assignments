@@ -58,3 +58,10 @@ target/
 
 *~
 .idea
+
+# java builds
+out/
+*.class
+
+# executables
+*.exe
