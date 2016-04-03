@@ -2,16 +2,29 @@ abstract class SortAlgorithm {
     abstract void sort(Integer[] dataArray);
 }
 
-class InsertSort extends SortAlgorithm {
+class InsertionSort extends SortAlgorithm {
     @Override
     void sort(Integer[] dataArray){
-        System.out.println("Len: " + dataArray.length);
-        System.out.println(dataArray[0]);
-        //System.out.println("Insert");
+
+        if(dataArray.length < 2)
+            return;
+        int x, j;
+        for(int i = 1; i < dataArray.length; i++){
+            x = dataArray[i];
+            j = i;
+            while (x < dataArray[j-1]){
+                dataArray[j] = dataArray[j-1];
+                j -= 1;
+                if(j == 0)
+                    break;
+            }
+            dataArray[j] = x;
+        }
     }
 
     @Override
     public String toString() {
+
         return "insert sort";
     }
 }

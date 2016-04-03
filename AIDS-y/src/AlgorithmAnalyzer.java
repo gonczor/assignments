@@ -42,10 +42,12 @@ public class AlgorithmAnalyzer {
     }
 
     private void getStartTimeStamp(){
+
         startTime = System.nanoTime();
     }
 
     private void getStopTimeStamp(){
+
         elapsedTime = System.nanoTime() - startTime;
     }
 

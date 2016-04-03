@@ -2,7 +2,7 @@ public class Sorting {
 
     AlgorithmAnalyzer analyzer;
     HeapSort heapSort;
-    InsertSort insertSort;
+    InsertionSort insertionSort;
     MergeSort mergeSort;
     QuickSort quickSort;
     RandomData randomData;
@@ -15,7 +15,7 @@ public class Sorting {
         sorting.initialize();
         try{
             sorting.analyzer.analyze(sorting.heapSort);
-            sorting.analyzer.analyze(sorting.insertSort);
+            sorting.analyzer.analyze(sorting.insertionSort);
             sorting.analyzer.analyze(sorting.mergeSort);
             sorting.analyzer.analyze(sorting.quickSort);
         }
@@ -27,7 +27,7 @@ public class Sorting {
 
     void initialize(){
         heapSort = new HeapSort();
-        insertSort = new InsertSort();
+        insertionSort = new InsertionSort();
         mergeSort = new MergeSort();
         quickSort = new QuickSort();
         randomData = new RandomData();
