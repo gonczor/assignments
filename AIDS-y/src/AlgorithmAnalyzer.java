@@ -1,3 +1,5 @@
+import java.io.FileInputStream;
+
 public class AlgorithmAnalyzer {
     long startTime;
     long elapsedTime;
