@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Sorting {
 
     AlgorithmAnalyzer analyzer;
@@ -20,6 +23,9 @@ public class Sorting {
             sorting.analyzer.analyze(sorting.quickSort);
         }
         catch (CloneNotSupportedException e){
+            e.getMessage();
+        }
+        catch (IOException e){
             e.getMessage();
         }
 

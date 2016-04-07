@@ -1,5 +1,6 @@
 abstract class SortAlgorithm {
     abstract void sort(Integer[] dataArray);
+
 }
 
 class InsertionSort extends SortAlgorithm {
@@ -30,9 +31,52 @@ class InsertionSort extends SortAlgorithm {
 }
 
 class MergeSort extends SortAlgorithm {
+    //Algorithm based on: http://www.vogella.com/tutorials/JavaAlgorithmsMergesort/article.html
+    Integer[] helperArray;
+    Integer[] dataArray;
+    int lowIndex, highIndex, middleIndex;
     @Override
     void sort(Integer[] dataArray) {
-        //System.out.println("Merge");
+        this.dataArray = dataArray;
+        prepare(dataArray);
+        mergeSort(lowIndex, highIndex);
+    }
+
+    private void prepare(Integer[] dataArray){
+        lowIndex = 0;
+        highIndex = dataArray.length - 1;
+        helperArray = new Integer[dataArray.length];
+    }
+
+    private void mergeSort(int lowIndex, int highIndex){
+        if(lowIndex < highIndex){
+            middleIndex = lowIndex + (highIndex - lowIndex) / 2;
+            mergeSort(lowIndex, middleIndex);
+            mergeSort(middleIndex + 1, highIndex);
+            merge(lowIndex, highIndex, middleIndex);
+        }
+    }
+
+    private void merge(int lowIndex, int highIndex, int middleIndex){
+        for(int i = lowIndex; i <= highIndex; i++)
+            helperArray[i] = dataArray[i];
+
+        int i = lowIndex;
+        int j = middleIndex + 1;
+        int k = lowIndex;
+
+        while (i <= middleIndex && j <= highIndex){
+            if(helperArray[i] <= helperArray[j]){
+                dataArray[k] = helperArray[i];
+                i++;
+            } else {
+                dataArray[k] = helperArray[j];
+                j++;
+            }
+            k++;
+        }
+        while(i <= middleIndex)
+            dataArray[k++] = helperArray[i++];
     }
 
     @Override

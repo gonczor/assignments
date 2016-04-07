@@ -66,3 +66,6 @@ out/
 
 # executables
 *.exe
+
+#data files for various projects
+*.data
