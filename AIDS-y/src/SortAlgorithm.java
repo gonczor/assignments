@@ -87,9 +87,40 @@ class MergeSort extends SortAlgorithm {
 }
 
 class QuickSort extends SortAlgorithm {
+
+    Integer[] dataArray;
     @Override
     void sort(Integer[] dataArray) {
-        //System.out.println("Quick");
+        this.dataArray = dataArray;
+        quickSort(0, dataArray.length-1);
+    }
+
+    private void quickSort(int lowIndex, int highIndex){
+        //little optimization while choosing pivot
+        int lowLocal = lowIndex, highLocal = highIndex;
+        int pivot = dataArray[highIndex];
+        while(lowLocal < highLocal){
+            while(dataArray[lowLocal] < pivot)
+                lowLocal++;
+            while (dataArray[highIndex] > pivot)
+                highLocal++;
+            if(lowLocal <= highLocal){
+                swapElements(lowLocal, highLocal);
+                lowLocal++;
+                highLocal--;
+            }
+        }
+
+        if(lowIndex < highLocal)
+            quickSort(lowIndex, highLocal);
+        if(lowLocal < highIndex)
+            quickSort(lowLocal, highIndex);
+    }
+
+    private void swapElements(int i, int j){
+        int temp = dataArray[i];
+        dataArray[i] = dataArray[j];
+        dataArray[j] = temp;
     }
 
     @Override
@@ -100,9 +131,67 @@ class QuickSort extends SortAlgorithm {
 }
 
 class HeapSort extends SortAlgorithm {
+    Integer[] dataArray;
+    int largest, arraySize;
     @Override
     void sort(Integer[] dataArray) {
-        //System.out.println("Heap");
+        this.dataArray = dataArray;
+        arraySize = dataArray.length - 1;
+        makeHeap();
+        for(int i = arraySize; i > 0; i--){
+            swap(0, i);
+            arraySize = arraySize -1;
+            maxHeap(0);
+        }
+        show();
+    }
+
+    private void makeHeap(){
+        for(int i = arraySize/2; i>=0;i--){
+            maxHeap(i);
+        }
+    }
+
+    private void maxHeap(int index){
+        int left = 2 * index;
+        int right = 2 * index + 1;
+        int max = index;
+        if(left <= arraySize && dataArray[left] >= dataArray[index])
+            max = left;
+        if(right <= arraySize && dataArray[right] > dataArray[max])
+            max = right;
+
+        if(max != index){
+            swap(index, max);
+            maxHeap(max);
+        }
+//        if(left <= arraySize && dataArray[left] > dataArray[index]){
+//            largest = left;
+//        } else {
+//            largest = index;
+//        }
+//
+//        if(right <= arraySize && dataArray[right] > dataArray[largest]){
+//            largest = right;
+//        }
+//
+//        if(largest != index){
+//            swap(index, largest);
+//            maxHeap(largest);
+//        }
+    }
+
+    private void swap(int i, int j){
+        int temp = dataArray[i];
+        dataArray[i] = dataArray[j];
+        dataArray[j] = temp;
+    }
+
+    private void show(){
+        for (int i: dataArray) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
     }
 
     @Override

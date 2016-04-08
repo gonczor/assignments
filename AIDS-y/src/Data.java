@@ -86,7 +86,7 @@ class DescendingData extends Data{
 
 class VShapedData extends Data{
     VShapedData() {
-        super();;
+        super();
         for (int i = 0; i < 10; i++) {
             numberOfProbesInArray = i * multiplier;
             probes[i] = new Integer[numberOfProbesInArray];
