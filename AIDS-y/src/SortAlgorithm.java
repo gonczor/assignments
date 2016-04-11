@@ -1,12 +1,26 @@
 abstract class SortAlgorithm {
+    Integer[] dataArray;
     abstract void sort(Integer[] dataArray);
 
+    protected void showSorted(){
+        if(dataArray.length < 2)
+            System.out.println(this.toString());
+
+        for(Integer i: dataArray){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    protected void showMemoryUsage(){
+        System.out.println(this.toString() + " using: " + Runtime.getRuntime().totalMemory());
+    }
 }
 
 class InsertionSort extends SortAlgorithm {
     @Override
     void sort(Integer[] dataArray){
-
+        this.dataArray = dataArray;
         if(dataArray.length < 2)
             return;
         int x, j;
@@ -20,7 +34,10 @@ class InsertionSort extends SortAlgorithm {
                     break;
             }
             dataArray[j] = x;
+            //showMemoryUsage();
         }
+
+        //showSorted();
     }
 
     @Override
@@ -31,15 +48,15 @@ class InsertionSort extends SortAlgorithm {
 }
 
 class MergeSort extends SortAlgorithm {
-    //Algorithm based on: http://www.vogella.com/tutorials/JavaAlgorithmsMergesort/article.html
     Integer[] helperArray;
-    Integer[] dataArray;
     int lowIndex, highIndex, middleIndex;
     @Override
     void sort(Integer[] dataArray) {
         this.dataArray = dataArray;
         prepare(dataArray);
         mergeSort(lowIndex, highIndex);
+
+        //showSorted();
     }
 
     private void prepare(Integer[] dataArray){
@@ -54,26 +71,23 @@ class MergeSort extends SortAlgorithm {
             mergeSort(lowIndex, middleIndex);
             mergeSort(middleIndex + 1, highIndex);
             merge(lowIndex, highIndex, middleIndex);
+            //showMemoryUsage();
         }
     }
 
     private void merge(int lowIndex, int highIndex, int middleIndex){
-        for(int i = lowIndex; i <= highIndex; i++)
-            helperArray[i] = dataArray[i];
+        System.arraycopy(dataArray, lowIndex, helperArray, lowIndex, highIndex + 1 - lowIndex);
 
         int i = lowIndex;
         int j = middleIndex + 1;
         int k = lowIndex;
 
         while (i <= middleIndex && j <= highIndex){
-            if(helperArray[i] <= helperArray[j]){
-                dataArray[k] = helperArray[i];
-                i++;
+            if(helperArray[i] < helperArray[j]){
+                dataArray[k++] = helperArray[i++];
             } else {
-                dataArray[k] = helperArray[j];
-                j++;
+                dataArray[k++] = helperArray[j++];;
             }
-            k++;
         }
         while(i <= middleIndex)
             dataArray[k++] = helperArray[i++];
@@ -88,7 +102,6 @@ class MergeSort extends SortAlgorithm {
 
 class QuickSort extends SortAlgorithm {
 
-    Integer[] dataArray;
     @Override
     void sort(Integer[] dataArray) {
         this.dataArray = dataArray;
@@ -97,24 +110,38 @@ class QuickSort extends SortAlgorithm {
 
     private void quickSort(int lowIndex, int highIndex){
         //little optimization while choosing pivot
-        int lowLocal = lowIndex, highLocal = highIndex;
-        int pivot = dataArray[highIndex];
+        int lowLocal = lowIndex, highLocal = highIndex - 1;
+        int pivot = getPivot(lowIndex, highIndex);
         while(lowLocal < highLocal){
             while(dataArray[lowLocal] < pivot)
                 lowLocal++;
-            while (dataArray[highIndex] > pivot)
-                highLocal++;
-            if(lowLocal <= highLocal){
+            while (dataArray[highLocal] > pivot)
+                highLocal--;
+            if(lowLocal < highLocal){
                 swapElements(lowLocal, highLocal);
                 lowLocal++;
                 highLocal--;
             }
         }
 
-        if(lowIndex < highLocal)
+        if(lowLocal < highLocal){
+
             quickSort(lowIndex, highLocal);
-        if(lowLocal < highIndex)
             quickSort(lowLocal, highIndex);
+        }
+        //showMemoryUsage();
+    }
+
+    private int getPivot(int low, int high){
+        int mid = low + (high - low) / 2;
+        if ((dataArray[low] <= dataArray[mid] && dataArray[mid] <= dataArray[high]) ||
+                (dataArray[low] >= dataArray[mid] && dataArray[mid] >= dataArray[high]))
+            return dataArray[mid];
+        if((dataArray[mid] <= dataArray[low] && dataArray[low] <= dataArray[high]) ||
+                (dataArray[mid] >= dataArray[low] && dataArray[low] >= dataArray[high]))
+            return dataArray[low];
+        else
+            return dataArray[high];
     }
 
     private void swapElements(int i, int j){
@@ -131,8 +158,8 @@ class QuickSort extends SortAlgorithm {
 }
 
 class HeapSort extends SortAlgorithm {
-    Integer[] dataArray;
-    int largest, arraySize;
+    int arraySize;
+    //Integer[] dataArray;
     @Override
     void sort(Integer[] dataArray) {
         this.dataArray = dataArray;
@@ -142,8 +169,9 @@ class HeapSort extends SortAlgorithm {
             swap(0, i);
             arraySize = arraySize -1;
             maxHeap(0);
+            showMemoryUsage();
         }
-        show();
+        //showSorted();
     }
 
     private void makeHeap(){
@@ -165,33 +193,12 @@ class HeapSort extends SortAlgorithm {
             swap(index, max);
             maxHeap(max);
         }
-//        if(left <= arraySize && dataArray[left] > dataArray[index]){
-//            largest = left;
-//        } else {
-//            largest = index;
-//        }
-//
-//        if(right <= arraySize && dataArray[right] > dataArray[largest]){
-//            largest = right;
-//        }
-//
-//        if(largest != index){
-//            swap(index, largest);
-//            maxHeap(largest);
-//        }
     }
 
     private void swap(int i, int j){
         int temp = dataArray[i];
         dataArray[i] = dataArray[j];
         dataArray[j] = temp;
-    }
-
-    private void show(){
-        for (int i: dataArray) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
     }
 
     @Override

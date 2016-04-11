@@ -10,6 +10,9 @@ int main()
     //task20();
     //task21();
     //task22();
-    task23();
+    //task23();
+    //task24();
+    //task25();
+    task26();
     return 0;
 }

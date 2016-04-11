@@ -284,3 +284,86 @@ void task23()
      proportion = (double) sum1 / sum2;
      printf("sum1: %d, sum2: %d, prop: %lf\n", sum1, sum2, proportion);
 }
+
+void task24()
+{
+    printf("\n\nTask 24\n\n");
+    char* base = "abcdefabdefabc";
+    char* searched = "abc";
+    uint i, j, matches_found;
+    char first_searched_char = searched[0];
+
+    matches_found = 0;
+    for(i = 0; i < strlen(base); i++)
+    {
+        if(base[i] == first_searched_char)
+        {
+            for(j = 0; j < strlen(searched); j++)
+            {
+                if(base[i+j] != searched[j])
+                    break;
+                if(searched[j+1] == '\0')
+                    matches_found++;
+            }
+        }
+    }
+
+    printf("Matches: %d\n", matches_found);
+}
+
+void task25()
+{
+    printf("\n\nTask 25\n\n");
+    char alphabet['z' - 'a' + 1];
+    uint number_of_chars = 'z' - 'a' + 1;
+    char *input_string = "larvehblidsnblivbealvybolabrliaervlbiebyvlkaelribl";
+    uint input_string_len = strlen(input_string);
+    uint i;
+
+    for(i = 0; i < number_of_chars; i++)
+    {
+        alphabet[i] = 0;
+    }
+
+    for(i = 0; i < input_string_len; i++)
+    {
+        char c = input_string[i];
+        alphabet[(int)(c - 'a')] += 1;
+    }
+
+    for(i = 0; i < number_of_chars; i++)
+        printf("%c occured: %d times.\n", 'a' + i, alphabet[i]);
+}
+
+void task26()
+{
+    printf("\n\nTask 26\n\n");
+    char* input_string = "aaaabbccddggaaaaaa";
+    longest_sequence longest, current;
+    uint i, j;
+
+    longest.character = '\0';
+    longest.occurences = 0;
+
+    for(i = 0; i < strlen(input_string); i++)
+    {
+        current.character = input_string[i];
+        current.occurences = 1;
+
+        while(current.character == input_string[i+1])
+        {
+                current.occurences += 1;
+                i++;
+                if(i == '\0')
+                    break;
+        }
+
+        if(current.occurences > longest.occurences)
+        {
+            longest.character = current.character;
+            longest.occurences = current.occurences;
+        }
+    }
+
+    printf("%c hass occured most often: %d\n", longest.character, longest.occurences);
+}

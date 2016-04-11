@@ -7,18 +7,28 @@ abstract class Data implements Cloneable{
     protected int multiplier;
     Random random;
     Data(){
-        multiplier = 1;
+        multiplier = 1000;
         probeArrayIndex = 10;
         random = new Random();
         probes = new Integer[probeArrayIndex][];
     }
 
-    public int getNumberOfProbesInArray(){
-        return numberOfProbesInArray;
+    public int getMultiplier(){
+        return multiplier;
     }
 
     public int getProbeArrayIndex(){
         return probeArrayIndex;
+    }
+
+    protected void showRandomized(){
+        System.out.println(this.toString());
+        for(Integer[] i: probes){
+            for(Integer j: i){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
     }
 
     @Override
@@ -30,13 +40,15 @@ abstract class Data implements Cloneable{
 class RandomData extends Data{
     RandomData(){
         super();
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < probeArrayIndex; i++){
             numberOfProbesInArray= i * multiplier;
             probes[i] = new Integer[numberOfProbesInArray];
             for(int j = 0; j < numberOfProbesInArray; j++){
-                probes[i][j] = random.nextInt(Integer.MAX_VALUE);
+                probes[i][j] = random.nextInt(probeArrayIndex * 2);
             }
         }
+
+        //showRandomized();
     }
 
     @Override
@@ -49,13 +61,14 @@ class RandomData extends Data{
 class AscendingData extends Data{
     AscendingData(){
         super();
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < probeArrayIndex; i++){
             numberOfProbesInArray = i * multiplier;
             probes[i] = new Integer[numberOfProbesInArray];
             for(int j = 0; j < numberOfProbesInArray; j++){
                 probes[i][j] = j + random.nextInt(5);
             }
         }
+        //showRandomized();
     }
 
     @Override
@@ -68,13 +81,14 @@ class AscendingData extends Data{
 class DescendingData extends Data{
     DescendingData() {
         super();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < probeArrayIndex; i++) {
             numberOfProbesInArray = i * multiplier;
             probes[i] = new Integer[numberOfProbesInArray];
             for (int j = 0; j < numberOfProbesInArray; j++) {
                 probes[i][j] = numberOfProbesInArray - j + random.nextInt(5);
             }
         }
+        //showRandomized();
     }
 
     @Override
@@ -87,7 +101,7 @@ class DescendingData extends Data{
 class VShapedData extends Data{
     VShapedData() {
         super();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < probeArrayIndex; i++) {
             numberOfProbesInArray = i * multiplier;
             probes[i] = new Integer[numberOfProbesInArray];
             for (int j = 0; j < numberOfProbesInArray / 2; j++) {
@@ -97,6 +111,7 @@ class VShapedData extends Data{
                 probes[i][j] = j + random.nextInt(5);
             }
         }
+        //showRandomized();
     }
 
     @Override

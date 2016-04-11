@@ -1,9 +1,11 @@
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AlgorithmAnalyzer {
-    private long startTime;
-    private long elapsedTime;
+    private long startTimeNs;
+    private long elapsedTimeUs;
+    File directory;
     FileOutputStream file;
 
     //In order to be able to use same data multiple times a copy to remember it is created.
@@ -29,7 +31,7 @@ public class AlgorithmAnalyzer {
 
     public void analyze (SortAlgorithm sortAlgorithm)
             throws CloneNotSupportedException, IOException{
-        int numberOfAnalyzesPerDataProbe = 3;
+        int numberOfAnalyzesPerDataProbe = 1;
         for(int checkRun = 0; checkRun < numberOfAnalyzesPerDataProbe; checkRun++) {
             prepare(sortAlgorithm, checkRun);
             analyzeAscending(sortAlgorithm);
@@ -47,7 +49,10 @@ public class AlgorithmAnalyzer {
 
     private void prepareFile(SortAlgorithm sortAlgorithm, int run)
             throws IOException{
-        file = new FileOutputStream(sortAlgorithm.toString() + " run: " + String.valueOf(run) + ".data");
+        directory = new File(sortAlgorithm.toString());
+        directory.mkdir();
+        file = new FileOutputStream(directory.toString() + File.separator+ sortAlgorithm.toString() +
+                " run: " + String.valueOf(run) + ".data");
         String messageToSaveString = sortAlgorithm.toString() + "\n";
         byte[] messageToSaveBytes = messageToSaveString.getBytes();
         file.write(messageToSaveBytes);
@@ -68,7 +73,7 @@ public class AlgorithmAnalyzer {
                 getStartTimeStamp();
                 sortAlgorithm.sort(ascendingDataDraftCopy.probes[probeSize]);
                 getStopTimeStamp();
-                saveDataToFile(probeSize, "ascending");
+                saveDataToFile(ascendingDataDraftCopy.getMultiplier()*probeSize, "ascending");
             }
     }
 
@@ -78,7 +83,7 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(descendingDataDraftCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(probeSize,"descending" );
+            saveDataToFile(descendingDataDraftCopy.getMultiplier()*probeSize,"descending" );
         }
     }
 
@@ -88,7 +93,7 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(vShapedDataCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(probeSize, "v-shaped");
+            saveDataToFile(vShapedDataDraftCopy.getMultiplier()*probeSize, "v-shaped");
         }
     }
 
@@ -98,26 +103,26 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(randomDataDraftCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(probeSize, "random");
+            saveDataToFile(randomDataDraftCopy.getMultiplier()*probeSize, "random");
         }
     }
 
 
     private void getStartTimeStamp(){
 
-        startTime = System.nanoTime();
+        startTimeNs = System.nanoTime();
     }
 
     private void getStopTimeStamp(){
 
-        elapsedTime = System.nanoTime() - startTime;
+        long elapsedTimeNs = System.nanoTime() - startTimeNs;
+        elapsedTimeUs = elapsedTimeNs / 1000;
     }
 
     private void saveDataToFile(int probeSize, String dataType)
             throws IOException{
-        String messageToSaveString = "Data type: " + dataType +
-                "\tsize: " + String.valueOf(probeSize) + " mln" +
-                "\ttime:" + String.valueOf(elapsedTime) + "\n";
+        String messageToSaveString = dataType + "\tsize:\t" + String.valueOf(probeSize) +
+                "\ttime (us):\t" + String.valueOf(elapsedTimeUs) + "\n";
 
         byte[] messageToSaveBytes = messageToSaveString.getBytes();
         file.write(messageToSaveBytes);
