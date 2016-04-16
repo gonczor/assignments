@@ -57,8 +57,7 @@ docs/_build/
 target/
 
 *~
-.idea/
-*.iml
+.idea
 
 # java builds
 out/
@@ -68,6 +67,7 @@ out/
 *.exe
 
 # Visual Studio in aids directory
-DataStructures/
 !DataStructures/DataStructures/*.c
 !DataStructures/DataStructures/*.h
+DataStructures/
+
