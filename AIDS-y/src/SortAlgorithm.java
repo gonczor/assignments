@@ -37,6 +37,7 @@ class MergeSort extends SortAlgorithm {
 
     @Override
     public String toString() {
+
         return "merge sort";
     }
 }
@@ -49,6 +50,7 @@ class QuickSort extends SortAlgorithm {
 
     @Override
     public String toString() {
+
         return "quick sort";
     }
 }
@@ -61,6 +63,7 @@ class HeapSort extends SortAlgorithm {
 
     @Override
     public String toString() {
+
         return "heap sort";
     }
 }

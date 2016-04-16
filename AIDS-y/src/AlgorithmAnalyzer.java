@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import java.nio.file.Path;
+=======
+import java.io.FileInputStream;
+>>>>>>> eb23d4f85e8660d2c92aa392b7221f89000cca64
 
 public class AlgorithmAnalyzer {
     long startTime;
