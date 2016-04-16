@@ -1,6 +1,9 @@
+import java.nio.file.Path;
+
 public class AlgorithmAnalyzer {
     long startTime;
     long elapsedTime;
+    Path file;
 
     //In order to be able to use same data multiple times a copy to remember it is created.
     //Test are conducted on *DraftCopy cloned each time in prepare() method.
@@ -33,12 +36,22 @@ public class AlgorithmAnalyzer {
         }
     }
 
+    private void prepare() throws  CloneNotSupportedException{
+        prepareData();
+        prepareFile();
+    }
+
     private void prepareData() throws CloneNotSupportedException{
         ascendingDataDraftCopy = (AscendingData) ascendingDataCopy.clone();
         descendingDataDraftCopy = (DescendingData) descendingDataCopy.clone();
         randomDataDraftCopy = (RandomData) randomDataCopy.clone();
         vShapedDataDraftCopy = (VShapedData) vShapedDataCopy.clone();
 
+    }
+
+    private void prepareFile(){
+
+        file =
     }
 
     private void getStartTimeStamp(){
