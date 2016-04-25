@@ -1,4 +1,5 @@
 import DataStructure.DataStructure as DataStructure
+from colorama import init, Fore
 
 
 class Matrix(DataStructure.DataStructure):
@@ -14,7 +15,11 @@ class Matrix(DataStructure.DataStructure):
         pass
 
     def show(self):
+        init(autoreset=True)
         for row in self.__matrix__:
             for cell in row:
-                print("{0}".format(cell), end="\t")
+                if cell:
+                    print(Fore.GREEN + "{0}".format(cell), end="\t")
+                else:
+                    print(Fore.RED + "{0}".format(cell), end="\t")
             print()
