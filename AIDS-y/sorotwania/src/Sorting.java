@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Sorting {
@@ -17,15 +16,12 @@ public class Sorting {
         Sorting sorting = new Sorting();
         sorting.initialize();
         try{
-            sorting.analyzer.analyze(sorting.heapSort);
-            sorting.analyzer.analyze(sorting.insertionSort);
-            sorting.analyzer.analyze(sorting.mergeSort);
+            //sorting.analyzer.analyze(sorting.heapSort);
+            //sorting.analyzer.analyze(sorting.insertionSort);
+            //sorting.analyzer.analyze(sorting.mergeSort);
             sorting.analyzer.analyze(sorting.quickSort);
         }
-        catch (CloneNotSupportedException e){
-            e.getMessage();
-        }
-        catch (IOException e){
+        catch (CloneNotSupportedException | IOException e){
             e.getMessage();
         }
 

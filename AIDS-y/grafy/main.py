@@ -4,7 +4,8 @@ from Algorithm import BroadFirstSearch, DepthFirstSearch
 
 class Analyze:
     def __init__(self):
-        pass
+        matrix = Matrix.Matrix(5, [])
+        matrix.show()
 
 if __name__ == '__main__':
     analyze = Analyze()

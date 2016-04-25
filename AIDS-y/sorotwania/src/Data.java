@@ -7,7 +7,7 @@ abstract class Data implements Cloneable{
     protected int multiplier;
     Random random;
     Data(){
-        multiplier = 1000;
+        multiplier = 200000;
         probeArrayIndex = 10;
         random = new Random();
         probes = new Integer[probeArrayIndex][];
@@ -22,13 +22,13 @@ abstract class Data implements Cloneable{
     }
 
     protected void showRandomized(){
-        System.out.println(this.toString());
-        for(Integer[] i: probes){
-            for(Integer j: i){
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
+//        System.out.println(this.toString());
+//        for(Integer[] i: probes){
+//            for(Integer j: i){
+//                System.out.print(j + " ");
+//            }
+//            System.out.println();
+//        }
     }
 
     @Override
@@ -48,7 +48,7 @@ class RandomData extends Data{
             }
         }
 
-        //showRandomized();
+        showRandomized();
     }
 
     @Override
@@ -68,7 +68,7 @@ class AscendingData extends Data{
                 probes[i][j] = j + random.nextInt(5);
             }
         }
-        //showRandomized();
+        showRandomized();
     }
 
     @Override
@@ -88,7 +88,7 @@ class DescendingData extends Data{
                 probes[i][j] = numberOfProbesInArray - j + random.nextInt(5);
             }
         }
-        //showRandomized();
+        showRandomized();
     }
 
     @Override
@@ -111,7 +111,7 @@ class VShapedData extends Data{
                 probes[i][j] = j + random.nextInt(5);
             }
         }
-        //showRandomized();
+        showRandomized();
     }
 
     @Override

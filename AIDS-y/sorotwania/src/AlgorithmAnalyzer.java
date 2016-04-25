@@ -73,7 +73,7 @@ public class AlgorithmAnalyzer {
                 getStartTimeStamp();
                 sortAlgorithm.sort(ascendingDataDraftCopy.probes[probeSize]);
                 getStopTimeStamp();
-                saveDataToFile(ascendingDataDraftCopy.getMultiplier()*probeSize, "ascending");
+                saveDataToFile(ascendingDataDraftCopy.getMultiplier()*probeSize, "ascending", sortAlgorithm);
             }
     }
 
@@ -83,7 +83,7 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(descendingDataDraftCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(descendingDataDraftCopy.getMultiplier()*probeSize,"descending" );
+            saveDataToFile(descendingDataDraftCopy.getMultiplier()*probeSize,"descending", sortAlgorithm );
         }
     }
 
@@ -93,7 +93,7 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(vShapedDataCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(vShapedDataDraftCopy.getMultiplier()*probeSize, "v-shaped");
+            saveDataToFile(vShapedDataDraftCopy.getMultiplier()*probeSize, "v-shaped", sortAlgorithm);
         }
     }
 
@@ -103,7 +103,7 @@ public class AlgorithmAnalyzer {
             getStartTimeStamp();
             sortAlgorithm.sort(randomDataDraftCopy.probes[probeSize]);
             getStopTimeStamp();
-            saveDataToFile(randomDataDraftCopy.getMultiplier()*probeSize, "random");
+            saveDataToFile(randomDataDraftCopy.getMultiplier()*probeSize, "random", sortAlgorithm);
         }
     }
 
@@ -119,8 +119,12 @@ public class AlgorithmAnalyzer {
         elapsedTimeUs = elapsedTimeNs / 1000;
     }
 
-    private void saveDataToFile(int probeSize, String dataType)
+    private void saveDataToFile(int probeSize, String dataType, SortAlgorithm algorithm)
             throws IOException{
+        System.out.println(algorithm + " typ: " + dataType +
+                " dane: " + String.valueOf(probeSize) +
+                " czas: " + String.valueOf(elapsedTimeUs));
+
         String messageToSaveString = dataType + "\tsize:\t" + String.valueOf(probeSize) +
                 "\ttime (us):\t" + String.valueOf(elapsedTimeUs) + "\n";
 

@@ -49,14 +49,14 @@ class InsertionSort extends SortAlgorithm {
 
 class MergeSort extends SortAlgorithm {
     Integer[] helperArray;
-    int lowIndex, highIndex, middleIndex;
+    int lowIndex, highIndex;
     @Override
     void sort(Integer[] dataArray) {
         this.dataArray = dataArray;
         prepare(dataArray);
         mergeSort(lowIndex, highIndex);
 
-        //showSorted();
+        showSorted();
     }
 
     private void prepare(Integer[] dataArray){
@@ -66,31 +66,43 @@ class MergeSort extends SortAlgorithm {
     }
 
     private void mergeSort(int lowIndex, int highIndex){
+
         if(lowIndex < highIndex){
-            middleIndex = lowIndex + (highIndex - lowIndex) / 2;
+            int middleIndex = lowIndex + (highIndex - lowIndex) / 2; //tu byl bug
             mergeSort(lowIndex, middleIndex);
             mergeSort(middleIndex + 1, highIndex);
-            merge(lowIndex, highIndex, middleIndex);
-            //showMemoryUsage();
+            merge(lowIndex, middleIndex, highIndex);
         }
     }
 
-    private void merge(int lowIndex, int highIndex, int middleIndex){
-        System.arraycopy(dataArray, lowIndex, helperArray, lowIndex, highIndex + 1 - lowIndex);
 
-        int i = lowIndex;
-        int j = middleIndex + 1;
-        int k = lowIndex;
+    private void merge(int lowerIndex, int middle, int higherIndex) {
 
-        while (i <= middleIndex && j <= highIndex){
-            if(helperArray[i] < helperArray[j]){
-                dataArray[k++] = helperArray[i++];
-            } else {
-                dataArray[k++] = helperArray[j++];;
-            }
+        for (int i = lowerIndex; i <= higherIndex; i++) {
+            helperArray[i] = dataArray[i];
         }
-        while(i <= middleIndex)
+        int i = lowerIndex;
+        int j = middle + 1;
+        int k = lowerIndex;
+        while (i <= middle && j <= higherIndex) {
+            if (helperArray[i] < helperArray[j]) {
+                dataArray[k] = helperArray[i];
+                i++;
+            } else {
+                dataArray[k] = helperArray[j];
+                j++;
+            }
+            k++;
+        }
+        while (i <= middle) {
             dataArray[k++] = helperArray[i++];
+//            k++; tak bedzie inaczej dzialac
+//            i++;
+        }
+        while (j <= higherIndex) {
+            dataArray[k++] = helperArray[j++];
+        }
+
     }
 
     @Override
@@ -106,29 +118,31 @@ class QuickSort extends SortAlgorithm {
     void sort(Integer[] dataArray) {
         this.dataArray = dataArray;
         quickSort(0, dataArray.length-1);
+        //showSorted();
     }
 
     private void quickSort(int lowIndex, int highIndex){
         //little optimization while choosing pivot
-        int lowLocal = lowIndex, highLocal = highIndex - 1;
+        int lowLocal = lowIndex, highLocal = highIndex;
         int pivot = getPivot(lowIndex, highIndex);
         while(lowLocal < highLocal){
-            while(dataArray[lowLocal] < pivot)
+            while(dataArray[lowLocal] < pivot) {
                 lowLocal++;
-            while (dataArray[highLocal] > pivot)
+            }
+            while (dataArray[highLocal] > pivot) {
                 highLocal--;
-            if(lowLocal < highLocal){
+            }
+            if(lowLocal <= highLocal){
                 swapElements(lowLocal, highLocal);
                 lowLocal++;
                 highLocal--;
             }
         }
 
-        if(lowLocal < highLocal){
-
+        if(lowIndex < highLocal)
             quickSort(lowIndex, highLocal);
+        if(lowLocal < highIndex)
             quickSort(lowLocal, highIndex);
-        }
         //showMemoryUsage();
     }
 
@@ -167,31 +181,31 @@ class HeapSort extends SortAlgorithm {
         makeHeap();
         for(int i = arraySize; i > 0; i--){
             swap(0, i);
-            arraySize = arraySize -1;
-            maxHeap(0);
-            showMemoryUsage();
+            arraySize--;// = arraySize -1;
+            repairHeap(0);
+            //showMemoryUsage();
         }
-        //showSorted();
+        showSorted();
     }
 
     private void makeHeap(){
         for(int i = arraySize/2; i>=0;i--){
-            maxHeap(i);
+            repairHeap(i);
         }
     }
 
-    private void maxHeap(int index){
+    private void repairHeap(int index){
         int left = 2 * index;
         int right = 2 * index + 1;
         int max = index;
-        if(left <= arraySize && dataArray[left] >= dataArray[index])
+        if(left <= arraySize && dataArray[left] >= dataArray[max])
             max = left;
         if(right <= arraySize && dataArray[right] > dataArray[max])
             max = right;
 
         if(max != index){
             swap(index, max);
-            maxHeap(max);
+            repairHeap(max);
         }
     }
 
