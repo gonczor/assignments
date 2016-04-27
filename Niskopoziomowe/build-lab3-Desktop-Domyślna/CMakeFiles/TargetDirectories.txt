@@ -1,0 +1,3 @@
+/home/gonczor/Dokumenty/Studia/Gdańsk Poznań/assignments/Niskopoziomowe/build-lab3-Desktop-Domyślna/CMakeFiles/edit_cache.dir
+/home/gonczor/Dokumenty/Studia/Gdańsk Poznań/assignments/Niskopoziomowe/build-lab3-Desktop-Domyślna/CMakeFiles/rebuild_cache.dir
+/home/gonczor/Dokumenty/Studia/Gdańsk Poznań/assignments/Niskopoziomowe/build-lab3-Desktop-Domyślna/CMakeFiles/lab3.dir
