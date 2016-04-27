@@ -6,3 +6,6 @@ class DataStructure:
 
     def create(self):
         pass
+
+    def get_number_of_elements(self):
+        return self.__number_of_elements__
