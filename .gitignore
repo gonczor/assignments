@@ -66,6 +66,14 @@ out/
 
 # executables
 *.exe
+*.o
+*.make
 
 #data files for various projects
 *.data
+*.txt
+build*/
+
+# project files
+*.cbp
+*.layout
