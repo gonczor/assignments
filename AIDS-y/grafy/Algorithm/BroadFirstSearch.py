@@ -12,7 +12,7 @@ class BroadFirstSearch(Algorithm.Algorithm):
     def represent(self):
         pass
 
-    def search_element(self, element):
+    def search(self, element):
         if isinstance(self.__data__, Matrix.Matrix):
             return self.__search_in_matrix__(element)
         elif isinstance(self.__data__, Line.Line):
@@ -23,14 +23,23 @@ class BroadFirstSearch(Algorithm.Algorithm):
     def __search_in_matrix__(self, element):
         while True:
             self.__add_neighbours_in_matrix__()
-            if self.__queue__[self.__queue_index__] == element:
+            if self.__queue_checked__():
+                return False
+            if self.__element_in_queue__(element):
                 return True
             self.__queue_index__ += 1
-            if self.__queue_index__ >= len(self.__queue__):
-                return False
 
     def __add_neighbours_in_matrix__(self):
-        self.__queue__ += self.__data__.get_neighbours_indexes_(self.__queue_index__)
+        if not self.__queue__:
+            self.__queue__ += self.__data__.get_neighbours(self.__queue_index__)
+        else:
+            self.__queue__ += self.__data__.get_neighbours(self.__queue__[self.__queue_index__-1])
+
+    def __element_in_queue__(self, element):
+        return self.__queue__[self.__queue_index__] == element
+
+    def __queue_checked__(self):
+        return self.__queue_index__ >= len(self.__queue__)
 
     def __search_in_line__(self, element):
         pass

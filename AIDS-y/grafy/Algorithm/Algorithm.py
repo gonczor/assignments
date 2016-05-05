@@ -5,5 +5,5 @@ class Algorithm:
     def represent(self):
         pass
 
-    def search_element(self, element):
+    def search(self, element):
         pass

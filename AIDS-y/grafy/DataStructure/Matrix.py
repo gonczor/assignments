@@ -30,11 +30,16 @@ class Matrix(DataStructure.DataStructure):
                     print(Fore.RED + "{0}".format(cell.value), end="\t")
             print()
 
-    def get_neighbours_indexes_(self, item_index):
+    def get_neighbours(self, item_index):
         neighbours = list()
         for index in range(len(self.matrix[item_index])):
             if (index != item_index and
                     self.matrix[item_index][index].value and
                     not self.matrix[item_index][index].checked):
                 neighbours.append(index)
+                self.__mark_as_checked__(index, item_index)
         return neighbours
+
+    def __mark_as_checked__(self, pos1, pos2):
+        self.matrix[pos1][pos2].checked = True
+        self.matrix[pos2][pos1].checked = True
