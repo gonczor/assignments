@@ -4,12 +4,36 @@ from DataStructure import Line, Matrix
 from Algorithm import BroadFirstSearch, DepthFirstSearch
 
 
-class Analyze:
+class Analyzer:
     def __init__(self):
-        matrix = Matrix.Matrix(6, [[0, 3], [1, 3], [2, 3]])
+        self.connections = []
+        self.graph_size = 0
+        self.size_multiplier = 6
+        # matrix = Matrix.Matrix(6, [[0, 3], [1, 3], [2, 3]])
+        # bfs = BroadFirstSearch.BroadFirstSearch(matrix)
+        # matrix.show()
+        # print(bfs.search(2))
+
+    def create_graph(self):
+        self.graph_size += 1
+        self.create_connection_list()
+
+    def create_connection_list(self):
+        self.connections = [[0, 3], [1, 3], [2, 3]]
+
+    def analyze(self):
+        self.create_graph()
+        matrix = Matrix.Matrix(self.graph_size * self.size_multiplier,
+                               self.connections)
         bfs = BroadFirstSearch.BroadFirstSearch(matrix)
         matrix.show()
         print(bfs.search(2))
 
+    def save_to_file(self):
+        pass
+
+
 if __name__ == '__main__':
-    analyze = Analyze()
+    analyzer = Analyzer()
+    for i in range(1):
+        analyzer.analyze()
