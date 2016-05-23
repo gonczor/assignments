@@ -5,7 +5,8 @@ CONFIG -= qt
 
 SOURCES += main.c \
     tasks1.c \
-    tasks2.c
+    tasks2.c \
+    tasks3.c
 
 HEADERS += \
     tasks.h

@@ -14,3 +14,9 @@ typedef struct {
 	int salary;
 	int premium_percent;
 }Worker;
+
+typedef union {
+    int i;
+    char c;
+    float f;
+} Bag;
