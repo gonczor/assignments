@@ -8,6 +8,7 @@
 
 void task1();
 void task2();
+void task3();
 
 typedef struct {
     char surname[BUFFER_SIZE];
@@ -20,3 +21,27 @@ typedef union {
     char c;
     float f;
 } Bag;
+
+/*
+prosty program, który umożliwi użytkownikowi:
+a.
+wprowadzenie i wyświetlenie danych grupy
+n
+studentów
+–
+dane należy przechowywać w
+pamięci wykorzystując tablicę,
+b.
+modyfikację danych wybranego studenta,
+c.
+wyznacz
+enie średniej, maksymalnej i minimalnej oceny dla grupy studentów,
+d.
+usunięcie danych o grupie studentów. */
+
+typedef struct {
+    char name[BUFFER_SIZE];
+    char surname[BUFFER_SIZE];
+    int album;
+    float grade;
+} Student;
