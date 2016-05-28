@@ -2,8 +2,8 @@
 
 import Matrix, BroadFirstSearch, Hamilton
 
-connections = [[1, 2], [0, 1], [2, 1], [2, 0]]
-number_of_elements = 3
+connections = [[0, 1], [1, 0], [1, 2], [2, 3], [3, 2], [2, 0]]
+number_of_elements = 4
 
 if __name__ == '__main__':
     matrix = Matrix.Matrix(number_of_elements, connections, oriented=True)

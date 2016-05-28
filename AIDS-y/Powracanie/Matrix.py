@@ -65,3 +65,11 @@ class Matrix:
         else:
             self.matrix[pos1][pos2].checked = True
             self.matrix[pos2][pos1].checked = True
+
+    def mark_zero_as_checked(self):
+        for i in range(len(self.matrix[0])):
+            if self.__oriented__:
+                self.matrix[0][i].checked = True
+            else:
+                self.matrix[0][i].checked = True
+                self.matrix[i][0].checked = True
