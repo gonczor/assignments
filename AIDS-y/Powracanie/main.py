@@ -18,8 +18,8 @@ def create_connections(oriented=False):
     number_of_needed_connections = 0
 
     for number_of_elements in number_of_elements_list:
-        possible_connections = get_possible_connections(number_of_elements, True)
         for saturation in saturation_list:
+            possible_connections = get_possible_connections(number_of_elements, oriented)
             if oriented:
                 number_of_needed_connections = int(saturation * (number_of_elements * (number_of_elements-1)))
             else:
@@ -29,10 +29,10 @@ def create_connections(oriented=False):
                 temp_conn.append(possible_connections[conn_pos])
                 possible_connections.remove(possible_connections[conn_pos])
             connections.append(temp_conn)
+            temp_conn = []
 
 
-
-def get_possible_connections(number_of_elements, oriented=False):
+def get_possible_connections(number_of_elements, oriented):
     connections = []
     if oriented:
         for i in range(number_of_elements):
@@ -48,6 +48,7 @@ def get_possible_connections(number_of_elements, oriented=False):
 
 
 if __name__ == '__main__':
+    create_connections(True)
     pass
     # matrix = Matrix.Matrix(number_of_elements, connections, oriented=True)
     # matrix.show()
