@@ -9,6 +9,8 @@
 void task1();
 void task2();
 void task3();
+void task5();
+void task6();
 
 typedef struct {
     char surname[BUFFER_SIZE];
@@ -43,5 +45,5 @@ typedef struct {
     char name[BUFFER_SIZE];
     char surname[BUFFER_SIZE];
     int album;
-    float grade;
+    double grade;
 } Student;

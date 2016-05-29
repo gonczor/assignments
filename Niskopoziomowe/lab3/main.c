@@ -7,7 +7,9 @@ int main(void)
     srand(time(NULL));
     //task1();
     //task2();
-    task3();
+    //task3();
+    //task5();
+    task6();
     return 0;
 }
 
