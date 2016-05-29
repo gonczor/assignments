@@ -9,7 +9,12 @@ int main(void)
     //task2();
     //task3();
     //task5();
-    task6();
+    //task6();
+    //task7();
+    //task8();
+    //task9();
+    //task10();
+    task12();
     return 0;
 }
 
