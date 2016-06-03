@@ -67,7 +67,9 @@ out/
 *.exe
 
 # Visual Studio in aids directory
+!DataStructures/
+!DataStructures/DataDtructures/
+DataStructures/DataStructures/*
+
 !DataStructures/DataStructures/*.c
 !DataStructures/DataStructures/*.h
-DataStructures/
-
