@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1464986594 source:c:\users\gonczor\documents\datastructures\lab4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tasks.h"
+
+1464986263 c:\users\gonczor\documents\datastructures\lab4\tasks.h
+	"tasks.c"
+
+1464986881 c:\users\gonczor\documents\datastructures\lab4\tasks.c
+	"tasks.h"
+
