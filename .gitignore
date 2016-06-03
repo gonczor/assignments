@@ -65,11 +65,16 @@ out/
 
 # executables
 *.exe
+*.o
+*.make
 
-# Visual Studio in aids directory
-!DataStructures/
-!DataStructures/DataDtructures/
-DataStructures/DataStructures/*
 
-!DataStructures/DataStructures/*.c
-!DataStructures/DataStructures/*.h
+#data files for various projects
+*.data
+*.txt
+build*/
+
+# project files
+*.cbp
+*.layout
+
