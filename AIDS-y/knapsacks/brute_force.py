@@ -15,16 +15,17 @@ class BruteForce:
         max_weight = 0
 
         while mask < pow(2, len(self.items)):
-            current_price, current_weight = self.get_current_weight_and_price(mask)
+            current_weight, current_price = self.get_current_weight_and_price(mask)
             if self.fits_knapsack(current_weight):
                 if current_price > max_price:
                     max_price, max_weight = current_price, current_weight
             mask += 1
 
-        return max_price, max_weight
+        return max_weight, max_price
 
     def get_current_weight_and_price(self, mask):
-        price = weight = 0
+        price = 0
+        weight = 0
         for i in self.items:
             if mask % 2 == 1:
                 price += i.price

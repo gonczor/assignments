@@ -16,7 +16,7 @@ def test_generator_price_within_limits():
     # default_limits
     gen = generator(generated_list_size)
     for g in gen:
-        assert 1 <= g[1] <= 10
+        assert 1 <= g[1] <= 15
     # arbitrary limits
     high = 20
     gen = generator(generated_list_size, max_price=high)
@@ -28,7 +28,7 @@ def test_generator_weight_within_limits():
     # default_limits
     gen = generator(generated_list_size)
     for g in gen:
-        assert 1 <= g[0] <= 10
+        assert 1 <= g[0] <= 15
     # arbitrary limits
     high = 20
     gen = generator(generated_list_size, max_weight=high)
@@ -71,8 +71,8 @@ def test_knapsack_filling():
 
 
 def test_brute_force_filling():
-    items_list = [[5, 5], [4, 3], [2.5, 2], [2.5, 2], [2, 2]]
-    bf = brute_force.BruteForce(items_list, knapsack_size=6)
+    items_list = [[10, 10], [6, 8], [4, 5], [4, 5], [4, 4]]
+    bf = brute_force.BruteForce(items_list, knapsack_size=12)
     print(bf.fill_knapsack())
 
 

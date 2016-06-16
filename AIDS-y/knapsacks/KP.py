@@ -57,11 +57,12 @@ class Knapsack_problem():
         for i in range(0,len(self.items)):
             result_weight += self.items[i][0]
             result_value += self.items[i][1]
-        return result_weight, result_value
+        return int(result_weight), int(result_value)
 
 
-
-matrix=Knapsack_problem([[5,5],[3,4],[2,2.5],[2,2.5],[2,2]],5)
+items_list = [[10, 10], [6, 8], [4, 5], [4, 5], [4, 4]]
+matrix = Knapsack_problem(items_list, 12)
+print(matrix.kp_weight_value())
 # print(matrix.kp_value_weight())
 # print(matrix.matrix)
 # print(matrix.items)

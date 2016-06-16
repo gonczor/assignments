@@ -18,8 +18,8 @@ class Greedy:
             if knapsack_weight+item.weight <= self._knapsack_size:
                 knapsack_price += item.price
                 knapsack_weight += item.weight
-            else:
-                return knapsack_price, knapsack_weight
+        return knapsack_weight, knapsack_price
 
     def _sort_items(self):
-        self.items.sort(key=lambda x: x.density)
+        self.items.sort(key=lambda x: x.density, reverse=True)
+
