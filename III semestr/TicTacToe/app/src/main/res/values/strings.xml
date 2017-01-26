@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="play_button_label">PLAY</string>
+    <string name="settings_button_label">Settings</string>
+    <string name="image_name" translatable="false">Main view logo</string>
+    <string name="save_settings_button">Save settings</string>
+    <string name="board3x3" translatable="false">3 x 3</string>
+    <string name="board4x4" translatable="false">4 x 4</string>
+    <string name="board5x5" translatable="false">5 x 5</string>
+    <string name="choose_board_size_text">Choose board size:</string>
+    <string name="choose_single_player">Choose single player</string>
+    <string name="choose_multiplayer">Choose multiplayer</string>
+    <string name="choose_game_duration">Choose game duration</string>
+    <string name="game_duration_key" translatable="false">game_duration_key</string>
+    <string name="settings_saved_toast">Settings saved!</string>
+    <string name="board_size_key" translatable="false">board_size_key</string>
+    <string name="multiplayer_option_key" translatable="false">multiplayer_option_key</string>
+</resources>

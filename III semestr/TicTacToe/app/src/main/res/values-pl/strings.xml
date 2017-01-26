@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kółko i krzyżyk</string>
+    <string name="play_button_label">GRAJ</string>
+    <string name="settings_button_label">Ustawienia</string>
+    <string name="choose_board_size_text">Wybierz rozmiar planszy</string>
+    <string name="save_settings_button">Zapisz ustawienia</string>
+    <string name="settings_saved_toast">Zapisano ustawienia</string>
+    <string name="choose_multiplayer">Wybierz tryb dla wielu graczy</string>
+    <string name="choose_single_player">Wybierz tryb dla pojedynczego gracza</string>
+    <string name="choose_game_duration">Wybierz czas gry</string>
+</resources>

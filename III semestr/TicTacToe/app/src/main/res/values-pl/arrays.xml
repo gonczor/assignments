@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="boardSizeDescription">
+        <item>3x3</item>
+        <item>4x4</item>
+        <item>5x5</item>
+    </string-array>
+
+    <string-array name="boardSizeValues">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="gameDurationDescription">
+        <item>5 sekund</item>
+        <item>10 sekund</item>
+        <item>30 sekund</item>
+        <item>1 minuta</item>
+    </string-array>
+
+    <string-array name="gameDurationValues">
+        <item>5</item>
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
+</resources>
