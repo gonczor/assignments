@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\czcib\Downloads\vhdl\mod 10\simulation\qsim
+vD_vhdl
+Z1 !s100 _0OiN8Q2e4>6=Yl5m5]WF0
+Z2 Iljc2h4AdPYin1oCNIX1EL2
+Z3 Vz]mB<I^NI4UD95lh8>1zi0
+Z4 dC:\Users\czcib\Desktop\new\zadanie 2\simulation\qsim
+Z5 w1482331322
+Z6 8modulo.vo
+Z7 Fmodulo.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|modulo.vo|
+Z10 o-work work -O0
+Z11 n@d_vhdl
+!i10b 1
+!s85 0
+Z12 !s108 1482331323.598000
+Z13 !s107 modulo.vo|
+!s101 -O0
+vD_vhdl_vlg_check_tst
+!i10b 1
+Z14 !s100 j3AZ;]m[e]85dNiEz3Q>z3
+Z15 ImSBV[Rk9Q^@fOCm?49ej^2
+Z16 VBhFC<XnMQ[]fi7:2HkEEN0
+R4
+Z17 w1482331320
+Z18 8modulo.vt
+Z19 Fmodulo.vt
+L0 57
+R8
+r1
+!s85 0
+31
+Z20 !s108 1482331323.769000
+Z21 !s107 modulo.vt|
+Z22 !s90 -work|work|modulo.vt|
+!s101 -O0
+R10
+Z23 n@d_vhdl_vlg_check_tst
+vD_vhdl_vlg_sample_tst
+!i10b 1
+Z24 !s100 9JzZKAI2]d0]:Ro4_jONL3
+Z25 Izm:?VZWZ]NQGIQ0GoQY;E1
+Z26 VanUh[Njh6B=^?GS6H2bR:0
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@d_vhdl_vlg_sample_tst
+vD_vhdl_vlg_vec_tst
+!i10b 1
+Z28 !s100 WCXB:6<AF528e<cdPeGT12
+Z29 I0>JfQ7hLzS[@Wa`Kn8hdD1
+Z30 Vl:::=7CRI<<9VoUHe]kVM3
+R4
+R17
+R18
+R19
+Z31 L0 205
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@d_vhdl_vlg_vec_tst

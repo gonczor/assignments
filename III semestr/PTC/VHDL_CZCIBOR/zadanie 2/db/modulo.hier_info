@@ -1,0 +1,36 @@
+|D_vhdl
+KEY[0] => D:DFF1.CLK
+LEDR[0] <= D:DFF1.Q
+LEDR[1] <= D:DFF2.Q
+LEDR[2] <= D:DFF3.Q
+LEDR[3] <= D:DFF4.Q
+
+
+|D_vhdl|D:DFF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+RST => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_vhdl|D:DFF2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+RST => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_vhdl|D:DFF3
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+RST => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_vhdl|D:DFF4
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+RST => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

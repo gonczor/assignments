@@ -1,0 +1,275 @@
+Simulator report for 76193
+Thu Feb  2 21:54:52 2017
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 91 nodes     ;
+; Simulation Coverage         ;      83.52 % ;
+; Total Number of Transitions ; 4255         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                 ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                               ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                            ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                  ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                   ;               ;
+; Vector input source                                                                        ; /home/gonczor/Dokumenty/Studia/III sem/PTC/76193/76193/Waveform15.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                    ; On            ;
+; Check outputs                                                                              ; Off                                                                   ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                    ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                    ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                    ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                    ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                   ; Off           ;
+; Detect glitches                                                                            ; Off                                                                   ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                   ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                   ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                   ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                   ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                    ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                            ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                   ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                   ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                  ; Auto          ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 32-bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      83.52 % ;
+; Total nodes checked                                 ; 91           ;
+; Total output ports checked                          ; 91           ;
+; Total output ports with complete 1/0-value coverage ; 76           ;
+; Total output ports with no 1/0-value coverage       ; 15           ;
+; Total output ports with no 1-value coverage         ; 15           ;
+; Total output ports with no 0-value coverage         ; 15           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                    ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |Main|comb~1                         ; |Main|comb~1                         ; out0             ;
+; |Main|comb~4                         ; |Main|comb~4                         ; out0             ;
+; |Main|comb~5                         ; |Main|comb~5                         ; out0             ;
+; |Main|comb~6                         ; |Main|comb~6                         ; out0             ;
+; |Main|comb~7                         ; |Main|comb~7                         ; out0             ;
+; |Main|comb~8                         ; |Main|comb~8                         ; out0             ;
+; |Main|comb~9                         ; |Main|comb~9                         ; out0             ;
+; |Main|comb~10                        ; |Main|comb~10                        ; out0             ;
+; |Main|comb~13                        ; |Main|comb~13                        ; out0             ;
+; |Main|comb~14                        ; |Main|comb~14                        ; out0             ;
+; |Main|comb~15                        ; |Main|comb~15                        ; out0             ;
+; |Main|comb~16                        ; |Main|comb~16                        ; out0             ;
+; |Main|comb~17                        ; |Main|comb~17                        ; out0             ;
+; |Main|comb~18                        ; |Main|comb~18                        ; out0             ;
+; |Main|comb~19                        ; |Main|comb~19                        ; out0             ;
+; |Main|SW[1]                          ; |Main|SW[1]                          ; out              ;
+; |Main|LEDR[0]                        ; |Main|LEDR[0]                        ; pin_out          ;
+; |Main|LEDR[1]                        ; |Main|LEDR[1]                        ; pin_out          ;
+; |Main|LEDR[2]                        ; |Main|LEDR[2]                        ; pin_out          ;
+; |Main|LEDR[3]                        ; |Main|LEDR[3]                        ; pin_out          ;
+; |Main|LEDR[4]                        ; |Main|LEDR[4]                        ; pin_out          ;
+; |Main|LEDR[5]                        ; |Main|LEDR[5]                        ; pin_out          ;
+; |Main|Counter:counter2|internalClock ; |Main|Counter:counter2|internalClock ; out0             ;
+; |Main|Counter:counter2|reset         ; |Main|Counter:counter2|reset         ; out0             ;
+; |Main|Counter:counter2|Q~2           ; |Main|Counter:counter2|Q~2           ; out              ;
+; |Main|Counter:counter2|Q~3           ; |Main|Counter:counter2|Q~3           ; out              ;
+; |Main|Counter:counter2|Q~6           ; |Main|Counter:counter2|Q~6           ; out              ;
+; |Main|Counter:counter2|Q~7           ; |Main|Counter:counter2|Q~7           ; out              ;
+; |Main|Counter:counter2|Q~10          ; |Main|Counter:counter2|Q~10          ; out              ;
+; |Main|Counter:counter2|Q~11          ; |Main|Counter:counter2|Q~11          ; out              ;
+; |Main|Counter:counter2|Q~14          ; |Main|Counter:counter2|Q~14          ; out              ;
+; |Main|Counter:counter2|Q~15          ; |Main|Counter:counter2|Q~15          ; out              ;
+; |Main|Counter:counter2|Q[1]          ; |Main|Counter:counter2|Q[1]          ; regout           ;
+; |Main|Counter:counter2|Q[0]          ; |Main|Counter:counter2|Q[0]          ; regout           ;
+; |Main|Counter:counter1|internalClock ; |Main|Counter:counter1|internalClock ; out0             ;
+; |Main|Counter:counter1|reset         ; |Main|Counter:counter1|reset         ; out0             ;
+; |Main|Counter:counter1|Q~0           ; |Main|Counter:counter1|Q~0           ; out              ;
+; |Main|Counter:counter1|Q~1           ; |Main|Counter:counter1|Q~1           ; out              ;
+; |Main|Counter:counter1|Q~2           ; |Main|Counter:counter1|Q~2           ; out              ;
+; |Main|Counter:counter1|Q~3           ; |Main|Counter:counter1|Q~3           ; out              ;
+; |Main|Counter:counter1|Q~4           ; |Main|Counter:counter1|Q~4           ; out              ;
+; |Main|Counter:counter1|Q~5           ; |Main|Counter:counter1|Q~5           ; out              ;
+; |Main|Counter:counter1|Q~6           ; |Main|Counter:counter1|Q~6           ; out              ;
+; |Main|Counter:counter1|Q~7           ; |Main|Counter:counter1|Q~7           ; out              ;
+; |Main|Counter:counter1|CON           ; |Main|Counter:counter1|CON           ; regout           ;
+; |Main|Counter:counter1|Q~8           ; |Main|Counter:counter1|Q~8           ; out              ;
+; |Main|Counter:counter1|Q~9           ; |Main|Counter:counter1|Q~9           ; out              ;
+; |Main|Counter:counter1|Q~10          ; |Main|Counter:counter1|Q~10          ; out              ;
+; |Main|Counter:counter1|Q~11          ; |Main|Counter:counter1|Q~11          ; out              ;
+; |Main|Counter:counter1|Q~12          ; |Main|Counter:counter1|Q~12          ; out              ;
+; |Main|Counter:counter1|Q~13          ; |Main|Counter:counter1|Q~13          ; out              ;
+; |Main|Counter:counter1|Q~14          ; |Main|Counter:counter1|Q~14          ; out              ;
+; |Main|Counter:counter1|Q~15          ; |Main|Counter:counter1|Q~15          ; out              ;
+; |Main|Counter:counter1|CON~0         ; |Main|Counter:counter1|CON~0         ; out              ;
+; |Main|Counter:counter1|Q[3]          ; |Main|Counter:counter1|Q[3]          ; regout           ;
+; |Main|Counter:counter1|Q[2]          ; |Main|Counter:counter1|Q[2]          ; regout           ;
+; |Main|Counter:counter1|Q[1]          ; |Main|Counter:counter1|Q[1]          ; regout           ;
+; |Main|Counter:counter1|Q[0]          ; |Main|Counter:counter1|Q[0]          ; regout           ;
+; |Main|Counter:counter2|Add0~0        ; |Main|Counter:counter2|Add0~0        ; out0             ;
+; |Main|Counter:counter2|Add0~1        ; |Main|Counter:counter2|Add0~1        ; out0             ;
+; |Main|Counter:counter2|Add0~3        ; |Main|Counter:counter2|Add0~3        ; out0             ;
+; |Main|Counter:counter2|Add1~0        ; |Main|Counter:counter2|Add1~0        ; out0             ;
+; |Main|Counter:counter1|Add0~0        ; |Main|Counter:counter1|Add0~0        ; out0             ;
+; |Main|Counter:counter1|Add0~1        ; |Main|Counter:counter1|Add0~1        ; out0             ;
+; |Main|Counter:counter1|Add0~2        ; |Main|Counter:counter1|Add0~2        ; out0             ;
+; |Main|Counter:counter1|Add0~3        ; |Main|Counter:counter1|Add0~3        ; out0             ;
+; |Main|Counter:counter1|Add0~4        ; |Main|Counter:counter1|Add0~4        ; out0             ;
+; |Main|Counter:counter1|Add0~5        ; |Main|Counter:counter1|Add0~5        ; out0             ;
+; |Main|Counter:counter1|Add0~6        ; |Main|Counter:counter1|Add0~6        ; out0             ;
+; |Main|Counter:counter1|Add1~0        ; |Main|Counter:counter1|Add1~0        ; out0             ;
+; |Main|Counter:counter1|Add1~1        ; |Main|Counter:counter1|Add1~1        ; out0             ;
+; |Main|Counter:counter1|Add1~2        ; |Main|Counter:counter1|Add1~2        ; out0             ;
+; |Main|Counter:counter1|Add1~3        ; |Main|Counter:counter1|Add1~3        ; out0             ;
+; |Main|Counter:counter1|Add1~4        ; |Main|Counter:counter1|Add1~4        ; out0             ;
+; |Main|Counter:counter1|Equal0~0      ; |Main|Counter:counter1|Equal0~0      ; out0             ;
+; |Main|Counter:counter1|Equal1~0      ; |Main|Counter:counter1|Equal1~0      ; out0             ;
++--------------------------------------+--------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |Main|comb~0                  ; |Main|comb~0                  ; out0             ;
+; |Main|comb~2                  ; |Main|comb~2                  ; out0             ;
+; |Main|comb~3                  ; |Main|comb~3                  ; out0             ;
+; |Main|comb~11                 ; |Main|comb~11                 ; out0             ;
+; |Main|comb~12                 ; |Main|comb~12                 ; out0             ;
+; |Main|SW[0]                   ; |Main|SW[0]                   ; out              ;
+; |Main|Counter:counter2|Q~1    ; |Main|Counter:counter2|Q~1    ; out              ;
+; |Main|Counter:counter2|Q~5    ; |Main|Counter:counter2|Q~5    ; out              ;
+; |Main|Counter:counter2|Q~9    ; |Main|Counter:counter2|Q~9    ; out              ;
+; |Main|Counter:counter2|Q~13   ; |Main|Counter:counter2|Q~13   ; out              ;
+; |Main|Counter:counter2|Q[2]   ; |Main|Counter:counter2|Q[2]   ; regout           ;
+; |Main|Counter:counter1|BON    ; |Main|Counter:counter1|BON    ; regout           ;
+; |Main|Counter:counter2|Add0~2 ; |Main|Counter:counter2|Add0~2 ; out0             ;
+; |Main|Counter:counter2|Add1~1 ; |Main|Counter:counter2|Add1~1 ; out0             ;
+; |Main|Counter:counter2|Add1~2 ; |Main|Counter:counter2|Add1~2 ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |Main|comb~0                  ; |Main|comb~0                  ; out0             ;
+; |Main|comb~2                  ; |Main|comb~2                  ; out0             ;
+; |Main|comb~3                  ; |Main|comb~3                  ; out0             ;
+; |Main|comb~11                 ; |Main|comb~11                 ; out0             ;
+; |Main|comb~12                 ; |Main|comb~12                 ; out0             ;
+; |Main|SW[0]                   ; |Main|SW[0]                   ; out              ;
+; |Main|Counter:counter2|Q~1    ; |Main|Counter:counter2|Q~1    ; out              ;
+; |Main|Counter:counter2|Q~5    ; |Main|Counter:counter2|Q~5    ; out              ;
+; |Main|Counter:counter2|Q~9    ; |Main|Counter:counter2|Q~9    ; out              ;
+; |Main|Counter:counter2|Q~13   ; |Main|Counter:counter2|Q~13   ; out              ;
+; |Main|Counter:counter2|Q[2]   ; |Main|Counter:counter2|Q[2]   ; regout           ;
+; |Main|Counter:counter1|BON    ; |Main|Counter:counter1|BON    ; regout           ;
+; |Main|Counter:counter2|Add0~2 ; |Main|Counter:counter2|Add0~2 ; out0             ;
+; |Main|Counter:counter2|Add1~1 ; |Main|Counter:counter2|Add1~1 ; out0             ;
+; |Main|Counter:counter2|Add1~2 ; |Main|Counter:counter2|Add1~2 ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Feb  2 21:54:52 2017
+Info: Command: quartus_sim --simulation_results_format=VWF 76193 -c 76193
+Info (324025): Using vector source file "/home/gonczor/Dokumenty/Studia/III sem/PTC/76193/76193/Waveform15.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 5.0 ns on register "|Main|Counter:counter1|Q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 15.0 ns on register "|Main|Counter:counter1|Q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 35.0 ns on register "|Main|Counter:counter1|Q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 75.0 ns on register "|Main|Counter:counter1|Q[3]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 155.0 ns on register "|Main|Counter:counter1|CON"
+Warning (324036): Found clock-sensitive change during active clock edge at time 155.0 ns on register "|Main|Counter:counter2|Q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 315.0 ns on register "|Main|Counter:counter2|Q[1]"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      83.52 %
+Info (328052): Number of transitions in simulation is 4255
+Info (324045): Vector file 76193.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 32-bit Simulator was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 277 megabytes
+    Info: Processing ended: Thu Feb  2 21:54:52 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

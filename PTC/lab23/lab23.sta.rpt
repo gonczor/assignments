@@ -1,0 +1,1119 @@
+TimeQuest Timing Analyzer report for lab23
+Wed Nov 23 16:40:28 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'inst2'
+ 12. Slow Model Setup: 'inst'
+ 13. Slow Model Setup: 'inst1'
+ 14. Slow Model Setup: 'CLK'
+ 15. Slow Model Hold: 'CLK'
+ 16. Slow Model Hold: 'inst1'
+ 17. Slow Model Hold: 'inst'
+ 18. Slow Model Hold: 'inst2'
+ 19. Slow Model Recovery: 'inst1'
+ 20. Slow Model Recovery: 'inst2'
+ 21. Slow Model Recovery: 'inst'
+ 22. Slow Model Recovery: 'CLK'
+ 23. Slow Model Removal: 'CLK'
+ 24. Slow Model Removal: 'inst'
+ 25. Slow Model Removal: 'inst1'
+ 26. Slow Model Removal: 'inst2'
+ 27. Slow Model Minimum Pulse Width: 'CLK'
+ 28. Slow Model Minimum Pulse Width: 'inst'
+ 29. Slow Model Minimum Pulse Width: 'inst1'
+ 30. Slow Model Minimum Pulse Width: 'inst2'
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Fast Model Setup Summary
+ 34. Fast Model Hold Summary
+ 35. Fast Model Recovery Summary
+ 36. Fast Model Removal Summary
+ 37. Fast Model Minimum Pulse Width Summary
+ 38. Fast Model Setup: 'inst2'
+ 39. Fast Model Setup: 'inst'
+ 40. Fast Model Setup: 'inst1'
+ 41. Fast Model Setup: 'CLK'
+ 42. Fast Model Hold: 'CLK'
+ 43. Fast Model Hold: 'inst1'
+ 44. Fast Model Hold: 'inst'
+ 45. Fast Model Hold: 'inst2'
+ 46. Fast Model Recovery: 'inst1'
+ 47. Fast Model Recovery: 'inst2'
+ 48. Fast Model Recovery: 'inst'
+ 49. Fast Model Recovery: 'CLK'
+ 50. Fast Model Removal: 'CLK'
+ 51. Fast Model Removal: 'inst'
+ 52. Fast Model Removal: 'inst2'
+ 53. Fast Model Removal: 'inst1'
+ 54. Fast Model Minimum Pulse Width: 'CLK'
+ 55. Fast Model Minimum Pulse Width: 'inst'
+ 56. Fast Model Minimum Pulse Width: 'inst1'
+ 57. Fast Model Minimum Pulse Width: 'inst2'
+ 58. Clock to Output Times
+ 59. Minimum Clock to Output Times
+ 60. Multicorner Timing Analysis Summary
+ 61. Clock to Output Times
+ 62. Minimum Clock to Output Times
+ 63. Setup Transfers
+ 64. Hold Transfers
+ 65. Recovery Transfers
+ 66. Removal Transfers
+ 67. Report TCCS
+ 68. Report RSKM
+ 69. Unconstrained Paths
+ 70. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab23                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }   ;
+; inst       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { inst }  ;
+; inst1      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { inst1 } ;
+; inst2      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { inst2 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                           ;
++-------------+-----------------+------------+------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                 ;
++-------------+-----------------+------------+------------------------------------------------------+
+; 1610.31 MHz ; 500.0 MHz       ; inst2      ; limit due to low minimum pulse width violation (tcl) ;
++-------------+-----------------+------------+------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------+
+; Slow Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; inst2 ; 0.379 ; 0.000         ;
+; inst  ; 0.964 ; 0.000         ;
+; inst1 ; 1.112 ; 0.000         ;
+; CLK   ; 3.845 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -3.575 ; -3.575        ;
+; inst1 ; -0.842 ; -0.842        ;
+; inst  ; -0.694 ; -0.694        ;
+; inst2 ; 0.391  ; 0.000         ;
++-------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; inst1 ; -0.987 ; -0.987        ;
+; inst2 ; -0.987 ; -0.987        ;
+; inst  ; -0.986 ; -0.986        ;
+; CLK   ; 1.395  ; 0.000         ;
++-------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -2.397 ; -2.397        ;
+; inst  ; 0.484  ; 0.000         ;
+; inst1 ; 0.485  ; 0.000         ;
+; inst2 ; 0.485  ; 0.000         ;
++-------+--------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.222 ; -2.222                ;
+; inst  ; -0.500 ; -1.000                ;
+; inst1 ; -0.500 ; -1.000                ;
+; inst2 ; -0.500 ; -1.000                ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'inst2'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.379 ; inst3     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.000      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'inst'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.964 ; inst1     ; inst1   ; inst1        ; inst        ; 0.500        ; 0.835      ; 0.657      ;
+; 1.464 ; inst1     ; inst1   ; inst1        ; inst        ; 1.000        ; 0.835      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'inst1'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 1.112 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.500        ; 0.983      ; 0.657      ;
+; 1.612 ; inst2     ; inst2   ; inst2        ; inst1       ; 1.000        ; 0.983      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK'                                                                           ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 3.845 ; inst      ; inst    ; inst         ; CLK         ; 0.500        ; 3.716      ; 0.657      ;
+; 4.345 ; inst      ; inst    ; inst         ; CLK         ; 1.000        ; 3.716      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK'                                                                             ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -3.575 ; inst      ; inst    ; inst         ; CLK         ; 0.000        ; 3.716      ; 0.657      ;
+; -3.075 ; inst      ; inst    ; inst         ; CLK         ; -0.500       ; 3.716      ; 0.657      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'inst1'                                                                           ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.842 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.000        ; 0.983      ; 0.657      ;
+; -0.342 ; inst2     ; inst2   ; inst2        ; inst1       ; -0.500       ; 0.983      ; 0.657      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'inst'                                                                            ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.694 ; inst1     ; inst1   ; inst1        ; inst        ; 0.000        ; 0.835      ; 0.657      ;
+; -0.194 ; inst1     ; inst1   ; inst1        ; inst        ; -0.500       ; 0.835      ; 0.657      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'inst2'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; inst3     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.000      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'inst1'                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.987 ; inst3     ; inst2   ; inst2        ; inst1       ; 1.000        ; 0.000      ; 2.023      ;
+; -0.480 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.500        ; 0.983      ; 2.249      ;
+; -0.313 ; inst1     ; inst2   ; inst1        ; inst1       ; 0.500        ; 0.983      ; 2.082      ;
+; -0.215 ; inst      ; inst2   ; inst         ; inst1       ; 0.500        ; 0.983      ; 1.984      ;
+; 0.020  ; inst2     ; inst2   ; inst2        ; inst1       ; 1.000        ; 0.983      ; 2.249      ;
+; 0.187  ; inst1     ; inst2   ; inst1        ; inst1       ; 1.000        ; 0.983      ; 2.082      ;
+; 0.285  ; inst      ; inst2   ; inst         ; inst1       ; 1.000        ; 0.983      ; 1.984      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'inst2'                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.987 ; inst3     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.000      ; 2.023      ;
+; -0.480 ; inst2     ; inst3   ; inst2        ; inst2       ; 0.500        ; 0.983      ; 2.249      ;
+; -0.313 ; inst1     ; inst3   ; inst1        ; inst2       ; 0.500        ; 0.983      ; 2.082      ;
+; -0.215 ; inst      ; inst3   ; inst         ; inst2       ; 0.500        ; 0.983      ; 1.984      ;
+; 0.020  ; inst2     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.983      ; 2.249      ;
+; 0.187  ; inst1     ; inst3   ; inst1        ; inst2       ; 1.000        ; 0.983      ; 2.082      ;
+; 0.285  ; inst      ; inst3   ; inst         ; inst2       ; 1.000        ; 0.983      ; 1.984      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'inst'                                                                        ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.986 ; inst3     ; inst1   ; inst2        ; inst        ; 1.000        ; -0.148     ; 1.874      ;
+; -0.479 ; inst2     ; inst1   ; inst2        ; inst        ; 0.500        ; 0.835      ; 2.100      ;
+; -0.312 ; inst1     ; inst1   ; inst1        ; inst        ; 0.500        ; 0.835      ; 1.933      ;
+; -0.214 ; inst      ; inst1   ; inst         ; inst        ; 0.500        ; 0.835      ; 1.835      ;
+; 0.021  ; inst2     ; inst1   ; inst2        ; inst        ; 1.000        ; 0.835      ; 2.100      ;
+; 0.188  ; inst1     ; inst1   ; inst1        ; inst        ; 1.000        ; 0.835      ; 1.933      ;
+; 0.286  ; inst      ; inst1   ; inst         ; inst        ; 1.000        ; 0.835      ; 1.835      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'CLK'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 1.395 ; inst3     ; inst    ; inst2        ; CLK         ; 0.500        ; 2.733      ; 1.874      ;
+; 2.402 ; inst2     ; inst    ; inst2        ; CLK         ; 0.500        ; 3.716      ; 2.100      ;
+; 2.569 ; inst1     ; inst    ; inst1        ; CLK         ; 0.500        ; 3.716      ; 1.933      ;
+; 2.667 ; inst      ; inst    ; inst         ; CLK         ; 0.500        ; 3.716      ; 1.835      ;
+; 2.902 ; inst2     ; inst    ; inst2        ; CLK         ; 1.000        ; 3.716      ; 2.100      ;
+; 3.069 ; inst1     ; inst    ; inst1        ; CLK         ; 1.000        ; 3.716      ; 1.933      ;
+; 3.167 ; inst      ; inst    ; inst         ; CLK         ; 1.000        ; 3.716      ; 1.835      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'CLK'                                                                          ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -2.397 ; inst      ; inst    ; inst         ; CLK         ; 0.000        ; 3.716      ; 1.835      ;
+; -2.299 ; inst1     ; inst    ; inst1        ; CLK         ; 0.000        ; 3.716      ; 1.933      ;
+; -2.132 ; inst2     ; inst    ; inst2        ; CLK         ; 0.000        ; 3.716      ; 2.100      ;
+; -1.897 ; inst      ; inst    ; inst         ; CLK         ; -0.500       ; 3.716      ; 1.835      ;
+; -1.799 ; inst1     ; inst    ; inst1        ; CLK         ; -0.500       ; 3.716      ; 1.933      ;
+; -1.632 ; inst2     ; inst    ; inst2        ; CLK         ; -0.500       ; 3.716      ; 2.100      ;
+; -0.625 ; inst3     ; inst    ; inst2        ; CLK         ; -0.500       ; 2.733      ; 1.874      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'inst'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.484 ; inst      ; inst1   ; inst         ; inst        ; 0.000        ; 0.835      ; 1.835      ;
+; 0.582 ; inst1     ; inst1   ; inst1        ; inst        ; 0.000        ; 0.835      ; 1.933      ;
+; 0.749 ; inst2     ; inst1   ; inst2        ; inst        ; 0.000        ; 0.835      ; 2.100      ;
+; 0.984 ; inst      ; inst1   ; inst         ; inst        ; -0.500       ; 0.835      ; 1.835      ;
+; 1.082 ; inst1     ; inst1   ; inst1        ; inst        ; -0.500       ; 0.835      ; 1.933      ;
+; 1.249 ; inst2     ; inst1   ; inst2        ; inst        ; -0.500       ; 0.835      ; 2.100      ;
+; 1.756 ; inst3     ; inst1   ; inst2        ; inst        ; 0.000        ; -0.148     ; 1.874      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'inst1'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.485 ; inst      ; inst2   ; inst         ; inst1       ; 0.000        ; 0.983      ; 1.984      ;
+; 0.583 ; inst1     ; inst2   ; inst1        ; inst1       ; 0.000        ; 0.983      ; 2.082      ;
+; 0.750 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.000        ; 0.983      ; 2.249      ;
+; 0.985 ; inst      ; inst2   ; inst         ; inst1       ; -0.500       ; 0.983      ; 1.984      ;
+; 1.083 ; inst1     ; inst2   ; inst1        ; inst1       ; -0.500       ; 0.983      ; 2.082      ;
+; 1.250 ; inst2     ; inst2   ; inst2        ; inst1       ; -0.500       ; 0.983      ; 2.249      ;
+; 1.757 ; inst3     ; inst2   ; inst2        ; inst1       ; 0.000        ; 0.000      ; 2.023      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'inst2'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.485 ; inst      ; inst3   ; inst         ; inst2       ; 0.000        ; 0.983      ; 1.984      ;
+; 0.583 ; inst1     ; inst3   ; inst1        ; inst2       ; 0.000        ; 0.983      ; 2.082      ;
+; 0.750 ; inst2     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.983      ; 2.249      ;
+; 0.985 ; inst      ; inst3   ; inst         ; inst2       ; -0.500       ; 0.983      ; 1.984      ;
+; 1.083 ; inst1     ; inst3   ; inst1        ; inst2       ; -0.500       ; 0.983      ; 2.082      ;
+; 1.250 ; inst2     ; inst3   ; inst2        ; inst2       ; -0.500       ; 0.983      ; 2.249      ;
+; 1.757 ; inst3     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.000      ; 2.023      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; CLK   ; Rise       ; CLK         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; inst        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; inst        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; CLK|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; CLK|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; inst|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; inst|clk    ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'inst'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst  ; Fall       ; inst1       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst  ; Fall       ; inst1       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst  ; Rise       ; inst1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst  ; Rise       ; inst1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst  ; Rise       ; inst|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst  ; Rise       ; inst|regout ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'inst1'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst1 ; Fall       ; inst2        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst1 ; Fall       ; inst2        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst1 ; Rise       ; inst1|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst1 ; Rise       ; inst1|regout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst1 ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst1 ; Rise       ; inst2|clk    ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'inst2'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst2 ; Fall       ; inst3        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst2 ; Fall       ; inst3        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst2 ; Rise       ; inst2|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst2 ; Rise       ; inst2|regout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst2 ; Rise       ; inst3|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst2 ; Rise       ; inst3|clk    ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 4.654 ; 4.654 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 3.439 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 4.654 ; 4.654 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 4.654 ; 3.439 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 3.439 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 4.654 ; 4.654 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; inst2 ; 0.665 ; 0.000         ;
+; inst  ; 0.779 ; 0.000         ;
+; inst1 ; 0.850 ; 0.000         ;
+; CLK   ; 2.290 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -1.910 ; -1.910        ;
+; inst1 ; -0.470 ; -0.470        ;
+; inst  ; -0.399 ; -0.399        ;
+; inst2 ; 0.215  ; 0.000         ;
++-------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; inst1 ; -0.019 ; -0.019        ;
+; inst2 ; -0.018 ; -0.018        ;
+; inst  ; -0.017 ; -0.017        ;
+; CLK   ; 0.994  ; 0.000         ;
++-------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -1.325 ; -1.325        ;
+; inst  ; 0.186  ; 0.000         ;
+; inst2 ; 0.187  ; 0.000         ;
+; inst1 ; 0.188  ; 0.000         ;
++-------+--------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.222 ; -2.222                ;
+; inst  ; -0.500 ; -1.000                ;
+; inst1 ; -0.500 ; -1.000                ;
+; inst2 ; -0.500 ; -1.000                ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'inst2'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.665 ; inst3     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'inst'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.779 ; inst1     ; inst1   ; inst1        ; inst        ; 0.500        ; 0.473      ; 0.367      ;
+; 1.279 ; inst1     ; inst1   ; inst1        ; inst        ; 1.000        ; 0.473      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'inst1'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.850 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.500        ; 0.544      ; 0.367      ;
+; 1.350 ; inst2     ; inst2   ; inst2        ; inst1       ; 1.000        ; 0.544      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK'                                                                           ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 2.290 ; inst      ; inst    ; inst         ; CLK         ; 0.500        ; 1.984      ; 0.367      ;
+; 2.790 ; inst      ; inst    ; inst         ; CLK         ; 1.000        ; 1.984      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK'                                                                             ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -1.910 ; inst      ; inst    ; inst         ; CLK         ; 0.000        ; 1.984      ; 0.367      ;
+; -1.410 ; inst      ; inst    ; inst         ; CLK         ; -0.500       ; 1.984      ; 0.367      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'inst1'                                                                           ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.470 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.000        ; 0.544      ; 0.367      ;
+; 0.030  ; inst2     ; inst2   ; inst2        ; inst1       ; -0.500       ; 0.544      ; 0.367      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'inst'                                                                            ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.399 ; inst1     ; inst1   ; inst1        ; inst        ; 0.000        ; 0.473      ; 0.367      ;
+; 0.101  ; inst1     ; inst1   ; inst1        ; inst        ; -0.500       ; 0.473      ; 0.367      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'inst2'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; inst3     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'inst1'                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.019 ; inst3     ; inst2   ; inst2        ; inst1       ; 1.000        ; -0.001     ; 1.050      ;
+; 0.050  ; inst2     ; inst2   ; inst2        ; inst1       ; 0.500        ; 0.544      ; 1.167      ;
+; 0.125  ; inst1     ; inst2   ; inst1        ; inst1       ; 0.500        ; 0.544      ; 1.092      ;
+; 0.192  ; inst      ; inst2   ; inst         ; inst1       ; 0.500        ; 0.544      ; 1.025      ;
+; 0.550  ; inst2     ; inst2   ; inst2        ; inst1       ; 1.000        ; 0.544      ; 1.167      ;
+; 0.625  ; inst1     ; inst2   ; inst1        ; inst1       ; 1.000        ; 0.544      ; 1.092      ;
+; 0.692  ; inst      ; inst2   ; inst         ; inst1       ; 1.000        ; 0.544      ; 1.025      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'inst2'                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.018 ; inst3     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.000      ; 1.050      ;
+; 0.051  ; inst2     ; inst3   ; inst2        ; inst2       ; 0.500        ; 0.545      ; 1.167      ;
+; 0.126  ; inst1     ; inst3   ; inst1        ; inst2       ; 0.500        ; 0.545      ; 1.092      ;
+; 0.193  ; inst      ; inst3   ; inst         ; inst2       ; 0.500        ; 0.545      ; 1.025      ;
+; 0.551  ; inst2     ; inst3   ; inst2        ; inst2       ; 1.000        ; 0.545      ; 1.167      ;
+; 0.626  ; inst1     ; inst3   ; inst1        ; inst2       ; 1.000        ; 0.545      ; 1.092      ;
+; 0.693  ; inst      ; inst3   ; inst         ; inst2       ; 1.000        ; 0.545      ; 1.025      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'inst'                                                                        ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.017 ; inst3     ; inst1   ; inst2        ; inst        ; 1.000        ; -0.072     ; 0.977      ;
+; 0.052  ; inst2     ; inst1   ; inst2        ; inst        ; 0.500        ; 0.473      ; 1.094      ;
+; 0.127  ; inst1     ; inst1   ; inst1        ; inst        ; 0.500        ; 0.473      ; 1.019      ;
+; 0.194  ; inst      ; inst1   ; inst         ; inst        ; 0.500        ; 0.473      ; 0.952      ;
+; 0.552  ; inst2     ; inst1   ; inst2        ; inst        ; 1.000        ; 0.473      ; 1.094      ;
+; 0.627  ; inst1     ; inst1   ; inst1        ; inst        ; 1.000        ; 0.473      ; 1.019      ;
+; 0.694  ; inst      ; inst1   ; inst         ; inst        ; 1.000        ; 0.473      ; 0.952      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'CLK'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.994 ; inst3     ; inst    ; inst2        ; CLK         ; 0.500        ; 1.439      ; 0.977      ;
+; 1.563 ; inst2     ; inst    ; inst2        ; CLK         ; 0.500        ; 1.984      ; 1.094      ;
+; 1.638 ; inst1     ; inst    ; inst1        ; CLK         ; 0.500        ; 1.984      ; 1.019      ;
+; 1.705 ; inst      ; inst    ; inst         ; CLK         ; 0.500        ; 1.984      ; 0.952      ;
+; 2.063 ; inst2     ; inst    ; inst2        ; CLK         ; 1.000        ; 1.984      ; 1.094      ;
+; 2.138 ; inst1     ; inst    ; inst1        ; CLK         ; 1.000        ; 1.984      ; 1.019      ;
+; 2.205 ; inst      ; inst    ; inst         ; CLK         ; 1.000        ; 1.984      ; 0.952      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'CLK'                                                                          ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -1.325 ; inst      ; inst    ; inst         ; CLK         ; 0.000        ; 1.984      ; 0.952      ;
+; -1.258 ; inst1     ; inst    ; inst1        ; CLK         ; 0.000        ; 1.984      ; 1.019      ;
+; -1.183 ; inst2     ; inst    ; inst2        ; CLK         ; 0.000        ; 1.984      ; 1.094      ;
+; -0.825 ; inst      ; inst    ; inst         ; CLK         ; -0.500       ; 1.984      ; 0.952      ;
+; -0.758 ; inst1     ; inst    ; inst1        ; CLK         ; -0.500       ; 1.984      ; 1.019      ;
+; -0.683 ; inst2     ; inst    ; inst2        ; CLK         ; -0.500       ; 1.984      ; 1.094      ;
+; -0.114 ; inst3     ; inst    ; inst2        ; CLK         ; -0.500       ; 1.439      ; 0.977      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'inst'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.186 ; inst      ; inst1   ; inst         ; inst        ; 0.000        ; 0.473      ; 0.952      ;
+; 0.253 ; inst1     ; inst1   ; inst1        ; inst        ; 0.000        ; 0.473      ; 1.019      ;
+; 0.328 ; inst2     ; inst1   ; inst2        ; inst        ; 0.000        ; 0.473      ; 1.094      ;
+; 0.686 ; inst      ; inst1   ; inst         ; inst        ; -0.500       ; 0.473      ; 0.952      ;
+; 0.753 ; inst1     ; inst1   ; inst1        ; inst        ; -0.500       ; 0.473      ; 1.019      ;
+; 0.828 ; inst2     ; inst1   ; inst2        ; inst        ; -0.500       ; 0.473      ; 1.094      ;
+; 0.897 ; inst3     ; inst1   ; inst2        ; inst        ; 0.000        ; -0.072     ; 0.977      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'inst2'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.187 ; inst      ; inst3   ; inst         ; inst2       ; 0.000        ; 0.545      ; 1.025      ;
+; 0.254 ; inst1     ; inst3   ; inst1        ; inst2       ; 0.000        ; 0.545      ; 1.092      ;
+; 0.329 ; inst2     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.545      ; 1.167      ;
+; 0.687 ; inst      ; inst3   ; inst         ; inst2       ; -0.500       ; 0.545      ; 1.025      ;
+; 0.754 ; inst1     ; inst3   ; inst1        ; inst2       ; -0.500       ; 0.545      ; 1.092      ;
+; 0.829 ; inst2     ; inst3   ; inst2        ; inst2       ; -0.500       ; 0.545      ; 1.167      ;
+; 0.898 ; inst3     ; inst3   ; inst2        ; inst2       ; 0.000        ; 0.000      ; 1.050      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'inst1'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.188 ; inst      ; inst2   ; inst         ; inst1       ; 0.000        ; 0.544      ; 1.025      ;
+; 0.255 ; inst1     ; inst2   ; inst1        ; inst1       ; 0.000        ; 0.544      ; 1.092      ;
+; 0.330 ; inst2     ; inst2   ; inst2        ; inst1       ; 0.000        ; 0.544      ; 1.167      ;
+; 0.688 ; inst      ; inst2   ; inst         ; inst1       ; -0.500       ; 0.544      ; 1.025      ;
+; 0.755 ; inst1     ; inst2   ; inst1        ; inst1       ; -0.500       ; 0.544      ; 1.092      ;
+; 0.830 ; inst2     ; inst2   ; inst2        ; inst1       ; -0.500       ; 0.544      ; 1.167      ;
+; 0.899 ; inst3     ; inst2   ; inst2        ; inst1       ; 0.000        ; -0.001     ; 1.050      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; CLK   ; Rise       ; CLK         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; inst        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; inst        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; CLK|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; CLK|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; inst|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; inst|clk    ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'inst'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst  ; Fall       ; inst1       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst  ; Fall       ; inst1       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst  ; Rise       ; inst1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst  ; Rise       ; inst1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst  ; Rise       ; inst|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst  ; Rise       ; inst|regout ;
++--------+--------------+----------------+------------------+-------+------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'inst1'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst1 ; Fall       ; inst2        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst1 ; Fall       ; inst2        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst1 ; Rise       ; inst1|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst1 ; Rise       ; inst1|regout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst1 ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst1 ; Rise       ; inst2|clk    ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'inst2'                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; inst2 ; Fall       ; inst3        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; inst2 ; Fall       ; inst3        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst2 ; Rise       ; inst2|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst2 ; Rise       ; inst2|regout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inst2 ; Rise       ; inst3|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inst2 ; Rise       ; inst3|clk    ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 2.523 ; 2.523 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 1.847 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 2.523 ; 2.523 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 2.523 ; 1.847 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 1.847 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 2.523 ; 2.523 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+-------+--------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+--------+----------+---------+---------------------+
+; Worst-case Slack ; 0.379 ; -3.575 ; -0.987   ; -2.397  ; -1.222              ;
+;  CLK             ; 2.290 ; -3.575 ; 0.994    ; -2.397  ; -1.222              ;
+;  inst            ; 0.779 ; -0.694 ; -0.986   ; 0.186   ; -0.500              ;
+;  inst1           ; 0.850 ; -0.842 ; -0.987   ; 0.188   ; -0.500              ;
+;  inst2           ; 0.379 ; 0.215  ; -0.987   ; 0.187   ; -0.500              ;
+; Design-wide TNS  ; 0.0   ; -5.111 ; -2.96    ; -2.397  ; -5.222              ;
+;  CLK             ; 0.000 ; -3.575 ; 0.000    ; -2.397  ; -2.222              ;
+;  inst            ; 0.000 ; -0.694 ; -0.986   ; 0.000   ; -1.000              ;
+;  inst1           ; 0.000 ; -0.842 ; -0.987   ; 0.000   ; -1.000              ;
+;  inst2           ; 0.000 ; 0.000  ; -0.987   ; 0.000   ; -1.000              ;
++------------------+-------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 3.448 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 3.448 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 3.469 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 3.469 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 3.439 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 4.654 ; 4.654 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 3.439 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 4.654 ; 4.654 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+;  LEDR[0]  ; inst       ; 1.865 ;       ; Rise       ; inst            ;
+; LEDR[*]   ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+;  LEDR[0]  ; inst       ;       ; 1.865 ; Fall       ; inst            ;
+; LEDR[*]   ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+;  LEDR[1]  ; inst1      ; 1.877 ;       ; Rise       ; inst1           ;
+; LEDR[*]   ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+;  LEDR[1]  ; inst1      ;       ; 1.877 ; Fall       ; inst1           ;
+; LEDR[*]   ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+;  LEDR[2]  ; inst2      ; 1.847 ;       ; Rise       ; inst2           ;
+; LEDR[*]   ; inst2      ; 2.523 ; 1.847 ; Fall       ; inst2           ;
+;  LEDR[2]  ; inst2      ;       ; 1.847 ; Fall       ; inst2           ;
+;  LEDR[3]  ; inst2      ; 2.523 ; 2.523 ; Fall       ; inst2           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst       ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst1      ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst2    ; 0        ; 0        ; 0        ; 1        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst       ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst1      ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst2    ; 0        ; 0        ; 0        ; 1        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst       ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst1      ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst2      ; CLK      ; 1        ; 2        ; 0        ; 0        ;
+; inst       ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst     ; 0        ; 0        ; 1        ; 2        ;
+; inst       ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst1    ; 0        ; 0        ; 1        ; 2        ;
+; inst       ; inst2    ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst2    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst2    ; 0        ; 0        ; 1        ; 2        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst       ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst1      ; CLK      ; 1        ; 1        ; 0        ; 0        ;
+; inst2      ; CLK      ; 1        ; 2        ; 0        ; 0        ;
+; inst       ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst     ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst     ; 0        ; 0        ; 1        ; 2        ;
+; inst       ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst1    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst1    ; 0        ; 0        ; 1        ; 2        ;
+; inst       ; inst2    ; 0        ; 0        ; 1        ; 1        ;
+; inst1      ; inst2    ; 0        ; 0        ; 1        ; 1        ;
+; inst2      ; inst2    ; 0        ; 0        ; 1        ; 2        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 23 16:40:20 2016
+Info: Command: quartus_sta lab23 -c lab23
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab23.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name inst2 inst2
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+    Info (332105): create_clock -period 1.000 -name inst inst
+    Info (332105): create_clock -period 1.000 -name inst1 inst1
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 0.379
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.379         0.000 inst2 
+    Info (332119):     0.964         0.000 inst 
+    Info (332119):     1.112         0.000 inst1 
+    Info (332119):     3.845         0.000 CLK 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -3.575
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.575        -3.575 CLK 
+    Info (332119):    -0.842        -0.842 inst1 
+    Info (332119):    -0.694        -0.694 inst 
+    Info (332119):     0.391         0.000 inst2 
+Info (332146): Worst-case recovery slack is -0.987
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.987        -0.987 inst1 
+    Info (332119):    -0.987        -0.987 inst2 
+    Info (332119):    -0.986        -0.986 inst 
+    Info (332119):     1.395         0.000 CLK 
+Info (332146): Worst-case removal slack is -2.397
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.397        -2.397 CLK 
+    Info (332119):     0.484         0.000 inst 
+    Info (332119):     0.485         0.000 inst1 
+    Info (332119):     0.485         0.000 inst2 
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -2.222 CLK 
+    Info (332119):    -0.500        -1.000 inst 
+    Info (332119):    -0.500        -1.000 inst1 
+    Info (332119):    -0.500        -1.000 inst2 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.665
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.665         0.000 inst2 
+    Info (332119):     0.779         0.000 inst 
+    Info (332119):     0.850         0.000 inst1 
+    Info (332119):     2.290         0.000 CLK 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -1.910
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.910        -1.910 CLK 
+    Info (332119):    -0.470        -0.470 inst1 
+    Info (332119):    -0.399        -0.399 inst 
+    Info (332119):     0.215         0.000 inst2 
+Info (332146): Worst-case recovery slack is -0.019
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.019        -0.019 inst1 
+    Info (332119):    -0.018        -0.018 inst2 
+    Info (332119):    -0.017        -0.017 inst 
+    Info (332119):     0.994         0.000 CLK 
+Info (332146): Worst-case removal slack is -1.325
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.325        -1.325 CLK 
+    Info (332119):     0.186         0.000 inst 
+    Info (332119):     0.187         0.000 inst2 
+    Info (332119):     0.188         0.000 inst1 
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -2.222 CLK 
+    Info (332119):    -0.500        -1.000 inst 
+    Info (332119):    -0.500        -1.000 inst1 
+    Info (332119):    -0.500        -1.000 inst2 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Wed Nov 23 16:40:28 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:01
+
+

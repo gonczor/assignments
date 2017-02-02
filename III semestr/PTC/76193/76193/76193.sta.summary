@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'SW[1]'
+Slack : -6.659
+TNS   : -38.413
+
+Type  : Slow Model Setup 'Counter:counter1|BON'
+Slack : -6.374
+TNS   : -13.790
+
+Type  : Slow Model Hold 'SW[1]'
+Slack : -3.459
+TNS   : -3.459
+
+Type  : Slow Model Hold 'Counter:counter1|BON'
+Slack : -2.084
+TNS   : -6.084
+
+Type  : Slow Model Recovery 'SW[1]'
+Slack : -4.681
+TNS   : -24.217
+
+Type  : Slow Model Recovery 'Counter:counter1|BON'
+Slack : -4.435
+TNS   : -13.302
+
+Type  : Slow Model Removal 'SW[1]'
+Slack : 1.374
+TNS   : 0.000
+
+Type  : Slow Model Removal 'Counter:counter1|BON'
+Slack : 1.910
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'SW[1]'
+Slack : -1.380
+TNS   : -7.380
+
+Type  : Slow Model Minimum Pulse Width 'Counter:counter1|BON'
+Slack : -0.500
+TNS   : -3.000
+
+Type  : Fast Model Setup 'SW[1]'
+Slack : -2.675
+TNS   : -13.831
+
+Type  : Fast Model Setup 'Counter:counter1|BON'
+Slack : -2.326
+TNS   : -4.637
+
+Type  : Fast Model Hold 'SW[1]'
+Slack : -2.011
+TNS   : -2.011
+
+Type  : Fast Model Hold 'Counter:counter1|BON'
+Slack : -1.324
+TNS   : -3.891
+
+Type  : Fast Model Recovery 'SW[1]'
+Slack : -1.899
+TNS   : -8.308
+
+Type  : Fast Model Recovery 'Counter:counter1|BON'
+Slack : -1.624
+TNS   : -4.872
+
+Type  : Fast Model Removal 'SW[1]'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Fast Model Removal 'Counter:counter1|BON'
+Slack : 0.674
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'SW[1]'
+Slack : -1.380
+TNS   : -7.380
+
+Type  : Fast Model Minimum Pulse Width 'Counter:counter1|BON'
+Slack : -0.500
+TNS   : -3.000
+
+------------------------------------------------------------

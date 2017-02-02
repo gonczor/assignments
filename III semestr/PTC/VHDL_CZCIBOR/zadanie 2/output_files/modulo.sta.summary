@@ -1,0 +1,165 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'D:DFF3|Q'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow Model Setup 'D:DFF1|Q'
+Slack : 0.964
+TNS   : 0.000
+
+Type  : Slow Model Setup 'D:DFF2|Q'
+Slack : 1.113
+TNS   : 0.000
+
+Type  : Slow Model Setup 'KEY[0]'
+Slack : 2.258
+TNS   : 0.000
+
+Type  : Slow Model Hold 'KEY[0]'
+Slack : -1.988
+TNS   : -1.988
+
+Type  : Slow Model Hold 'D:DFF2|Q'
+Slack : -0.843
+TNS   : -0.843
+
+Type  : Slow Model Hold 'D:DFF1|Q'
+Slack : -0.694
+TNS   : -0.694
+
+Type  : Slow Model Hold 'D:DFF3|Q'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'D:DFF3|Q'
+Slack : -1.114
+TNS   : -1.114
+
+Type  : Slow Model Recovery 'D:DFF2|Q'
+Slack : -0.966
+TNS   : -0.966
+
+Type  : Slow Model Recovery 'D:DFF1|Q'
+Slack : -0.930
+TNS   : -0.930
+
+Type  : Slow Model Recovery 'KEY[0]'
+Slack : -0.136
+TNS   : -0.136
+
+Type  : Slow Model Removal 'KEY[0]'
+Slack : -0.761
+TNS   : -0.761
+
+Type  : Slow Model Removal 'D:DFF1|Q'
+Slack : 0.533
+TNS   : 0.000
+
+Type  : Slow Model Removal 'D:DFF2|Q'
+Slack : 0.569
+TNS   : 0.000
+
+Type  : Slow Model Removal 'D:DFF3|Q'
+Slack : 0.717
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.380
+TNS   : -2.380
+
+Type  : Slow Model Minimum Pulse Width 'D:DFF1|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Slow Model Minimum Pulse Width 'D:DFF2|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Slow Model Minimum Pulse Width 'D:DFF3|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Setup 'D:DFF3|Q'
+Slack : 0.665
+TNS   : 0.000
+
+Type  : Fast Model Setup 'D:DFF1|Q'
+Slack : 0.777
+TNS   : 0.000
+
+Type  : Fast Model Setup 'D:DFF2|Q'
+Slack : 0.851
+TNS   : 0.000
+
+Type  : Fast Model Setup 'KEY[0]'
+Slack : 1.457
+TNS   : 0.000
+
+Type  : Fast Model Hold 'KEY[0]'
+Slack : -1.077
+TNS   : -1.077
+
+Type  : Fast Model Hold 'D:DFF2|Q'
+Slack : -0.471
+TNS   : -0.471
+
+Type  : Fast Model Hold 'D:DFF1|Q'
+Slack : -0.397
+TNS   : -0.397
+
+Type  : Fast Model Hold 'D:DFF3|Q'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'D:DFF3|Q'
+Slack : -0.093
+TNS   : -0.093
+
+Type  : Fast Model Recovery 'D:DFF2|Q'
+Slack : -0.020
+TNS   : -0.020
+
+Type  : Fast Model Recovery 'D:DFF1|Q'
+Slack : -0.013
+TNS   : -0.013
+
+Type  : Fast Model Recovery 'KEY[0]'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast Model Removal 'KEY[0]'
+Slack : -0.463
+TNS   : -0.463
+
+Type  : Fast Model Removal 'D:DFF1|Q'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Fast Model Removal 'D:DFF2|Q'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Fast Model Removal 'D:DFF3|Q'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.380
+TNS   : -2.380
+
+Type  : Fast Model Minimum Pulse Width 'D:DFF1|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'D:DFF2|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'D:DFF3|Q'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

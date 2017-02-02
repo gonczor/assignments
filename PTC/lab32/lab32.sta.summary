@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'KEY[0]'
+Slack : -0.252
+TNS   : -0.312
+
+Type  : Slow Model Setup '74161:inst|f74161:sub|110'
+Slack : -0.079
+TNS   : -0.155
+
+Type  : Slow Model Hold 'KEY[0]'
+Slack : -3.553
+TNS   : -3.553
+
+Type  : Slow Model Hold '74161:inst|f74161:sub|110'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery '74161:inst|f74161:sub|110'
+Slack : -1.870
+TNS   : -7.480
+
+Type  : Slow Model Recovery 'KEY[0]'
+Slack : -1.347
+TNS   : -5.388
+
+Type  : Slow Model Removal 'KEY[0]'
+Slack : -1.667
+TNS   : -6.668
+
+Type  : Slow Model Removal '74161:inst|f74161:sub|110'
+Slack : -1.144
+TNS   : -4.576
+
+Type  : Slow Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Slow Model Minimum Pulse Width '74161:inst|f74161:sub|110'
+Slack : -0.500
+TNS   : -4.000
+
+Type  : Fast Model Setup 'KEY[0]'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast Model Setup '74161:inst|f74161:sub|110'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Hold 'KEY[0]'
+Slack : -1.887
+TNS   : -1.887
+
+Type  : Fast Model Hold '74161:inst|f74161:sub|110'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery '74161:inst|f74161:sub|110'
+Slack : -0.284
+TNS   : -1.136
+
+Type  : Fast Model Recovery 'KEY[0]'
+Slack : -0.182
+TNS   : -0.728
+
+Type  : Fast Model Removal 'KEY[0]'
+Slack : -0.965
+TNS   : -3.860
+
+Type  : Fast Model Removal '74161:inst|f74161:sub|110'
+Slack : -0.863
+TNS   : -3.452
+
+Type  : Fast Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Fast Model Minimum Pulse Width '74161:inst|f74161:sub|110'
+Slack : -0.500
+TNS   : -4.000
+
+------------------------------------------------------------

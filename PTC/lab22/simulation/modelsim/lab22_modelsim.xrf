@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, /home/gonczor/altera/13.0sp1/quartus/projects/lab22/lab22.bdf
+source_file = 1, /home/gonczor/altera/13.0sp1/quartus/projects/lab22/Waveform.vwf
+source_file = 1, /home/gonczor/altera/13.0sp1/quartus/projects/lab22/db/lab22.cbx.xml
+design_name = lab22
+instance = comp, \CLK~I , CLK, lab22, 1
+instance = comp, \CLK~clkctrl , CLK~clkctrl, lab22, 1
+instance = comp, \inst~0 , inst~0, lab22, 1
+instance = comp, \inst13~0 , inst13~0, lab22, 1
+instance = comp, \LEDR[2]~I , LEDR[2], lab22, 1
+instance = comp, \LEDR[1]~I , LEDR[1], lab22, 1
+instance = comp, \LEDR[0]~I , LEDR[0], lab22, 1

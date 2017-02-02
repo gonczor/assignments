@@ -1,0 +1,79 @@
+|tester
+SW[0] => Counter74163:ct1.Clk
+SW[0] => Counter74163:ct2.Clk
+SW[1] => Counter74163:ct1.LdN
+SW[1] => Counter74163:ct1.P
+SW[1] => Counter74163:ct1.T
+SW[1] => Counter74163:ct2.LdN
+SW[2] => comb.IN1
+SW[2] => comb.IN1
+SW[2] => Counter74163:ct1.D[3]
+SW[2] => Counter74163:ct1.D[2]
+SW[2] => Counter74163:ct1.D[1]
+SW[2] => Counter74163:ct1.D[0]
+SW[2] => Counter74163:ct2.D[3]
+SW[2] => Counter74163:ct2.D[2]
+SW[2] => Counter74163:ct2.D[1]
+SW[2] => Counter74163:ct2.D[0]
+LEDR[0] <= Counter74163:ct1.Qout[0]
+LEDR[1] <= Counter74163:ct1.Qout[1]
+LEDR[2] <= Counter74163:ct1.Qout[2]
+LEDR[3] <= Counter74163:ct1.Qout[3]
+LEDR[4] <= Counter74163:ct2.Qout[0]
+LEDR[5] <= Counter74163:ct2.Qout[1]
+
+
+|tester|Counter74163:ct1
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+P => process_0.IN0
+T => process_0.IN1
+T => Cout.IN1
+Clk => Q[0].CLK
+Clk => Q[1].CLK
+Clk => Q[2].CLK
+Clk => Q[3].CLK
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Qout[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Qout[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Qout[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Qout[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tester|Counter74163:ct2
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+LdN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+ClrN => Q.OUTPUTSELECT
+P => process_0.IN0
+T => process_0.IN1
+T => Cout.IN1
+Clk => Q[0].CLK
+Clk => Q[1].CLK
+Clk => Q[2].CLK
+Clk => Q[3].CLK
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Qout[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Qout[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Qout[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Qout[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

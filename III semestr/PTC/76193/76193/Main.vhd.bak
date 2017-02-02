@@ -1,0 +1,55 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+ENTITY Main IS
+PORT(
+SW: IN std_logic_vector(1 DOWNTO 0);
+LEDR: OUT std_logic_vector(5 DOWNTO 0)
+);
+end Main;
+
+ARCHITECTURE Behaviour OF Main IS
+	COMPONENT Counter IS
+	port(LDN, CLR, DN, UP: in std_logic;
+			 D: in std_logic_vector(3 downto 0);
+			 CON, BON: out std_logic; 
+			 Qout: out std_logic_vector(3 downto 0));
+	END COMPONENT Counter;
+	
+signal counterFullUp, counterEmptyDown, bit1, bit2, bit4, bit8, bit16, bit32, bit64 : std_logic;
+begin
+
+		counter1: Counter PORT MAP(
+			DN => (SW(1) AND (NOT SW(0))),
+			UP => (SW(1) AND SW(0)),
+			Qout(3)=> bit8,
+			Qout(2) => bit4,
+			Qout(1) => bit2,
+			Qout(0) => bit1,
+			CON => counterFullUp,
+			BON => counterEmptyDown,
+			LDN => NOT (bit64 AND (SW(1) AND (NOT SW(0)))),
+			CLR => NOT (bit32 AND bit16 AND bit2 AND (SW(1) AND SW(0))),
+			D(0) => '1',
+			D(1) => '0',
+			D(2) => '0',
+			D(3) => '0'
+		);
+
+		counter2: Counter PORT MAP(
+			DN => counterEmptyDown,
+			UP => counterFullUp,
+			Qout(1) => bit32,
+			Qout(0) => bit16,
+			Qout(2) => bit64,
+			LDN => NOT (bit64 AND (SW(1) AND (NOT SW(0)))),
+			CLR => NOT (bit32 AND bit16 AND bit2 AND (SW(1) AND SW(0))),
+			D(0) => '1',
+			D(1) => '1',
+			D(2) => '0',
+			D(3) => '0'
+		);
+
+		LEDR <= (bit32, bit16, bit8, bit4, bit2, bit1);
+end Behaviour;

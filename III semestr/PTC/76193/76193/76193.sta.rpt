@@ -1,0 +1,1696 @@
+TimeQuest Timing Analyzer report for 76193
+Thu Feb  2 21:52:56 2017
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'SW[1]'
+ 12. Slow Model Setup: 'Counter:counter1|BON'
+ 13. Slow Model Hold: 'SW[1]'
+ 14. Slow Model Hold: 'Counter:counter1|BON'
+ 15. Slow Model Recovery: 'SW[1]'
+ 16. Slow Model Recovery: 'Counter:counter1|BON'
+ 17. Slow Model Removal: 'SW[1]'
+ 18. Slow Model Removal: 'Counter:counter1|BON'
+ 19. Slow Model Minimum Pulse Width: 'SW[1]'
+ 20. Slow Model Minimum Pulse Width: 'Counter:counter1|BON'
+ 21. Setup Times
+ 22. Hold Times
+ 23. Clock to Output Times
+ 24. Minimum Clock to Output Times
+ 25. Propagation Delay
+ 26. Minimum Propagation Delay
+ 27. Fast Model Setup Summary
+ 28. Fast Model Hold Summary
+ 29. Fast Model Recovery Summary
+ 30. Fast Model Removal Summary
+ 31. Fast Model Minimum Pulse Width Summary
+ 32. Fast Model Setup: 'SW[1]'
+ 33. Fast Model Setup: 'Counter:counter1|BON'
+ 34. Fast Model Hold: 'SW[1]'
+ 35. Fast Model Hold: 'Counter:counter1|BON'
+ 36. Fast Model Recovery: 'SW[1]'
+ 37. Fast Model Recovery: 'Counter:counter1|BON'
+ 38. Fast Model Removal: 'SW[1]'
+ 39. Fast Model Removal: 'Counter:counter1|BON'
+ 40. Fast Model Minimum Pulse Width: 'SW[1]'
+ 41. Fast Model Minimum Pulse Width: 'Counter:counter1|BON'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Propagation Delay
+ 47. Minimum Propagation Delay
+ 48. Multicorner Timing Analysis Summary
+ 49. Setup Times
+ 50. Hold Times
+ 51. Clock to Output Times
+ 52. Minimum Clock to Output Times
+ 53. Progagation Delay
+ 54. Minimum Progagation Delay
+ 55. Setup Transfers
+ 56. Hold Transfers
+ 57. Recovery Transfers
+ 58. Removal Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; 76193                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                     ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Clock Name           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                  ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Counter:counter1|BON ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Counter:counter1|BON } ;
+; SW[1]                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[1] }                ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+
+
++------------------------------------------------------------+
+; Slow Model Fmax Summary                                    ;
++------------+-----------------+----------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note ;
++------------+-----------------+----------------------+------+
+; 81.65 MHz  ; 81.65 MHz       ; SW[1]                ;      ;
+; 135.61 MHz ; 135.61 MHz      ; Counter:counter1|BON ;      ;
++------------+-----------------+----------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------+
+; Slow Model Setup Summary                      ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -6.659 ; -38.413       ;
+; Counter:counter1|BON ; -6.374 ; -13.790       ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -3.459 ; -3.459        ;
+; Counter:counter1|BON ; -2.084 ; -6.084        ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Recovery Summary                   ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -4.681 ; -24.217       ;
+; Counter:counter1|BON ; -4.435 ; -13.302       ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------+
+; Slow Model Removal Summary                   ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; SW[1]                ; 1.374 ; 0.000         ;
+; Counter:counter1|BON ; 1.910 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -1.380 ; -7.380        ;
+; Counter:counter1|BON ; -0.500 ; -3.000        ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'SW[1]'                                                                                                                                ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -6.659 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 7.449      ;
+; -6.604 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 6.477      ;
+; -6.548 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 6.421      ;
+; -6.409 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 8.362      ;
+; -6.386 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 8.340      ;
+; -6.375 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 8.328      ;
+; -6.354 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.390      ;
+; -6.345 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 8.298      ;
+; -6.331 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 7.368      ;
+; -6.320 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.356      ;
+; -6.298 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.334      ;
+; -6.290 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.326      ;
+; -6.264 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.300      ;
+; -6.253 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 7.290      ;
+; -6.239 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 8.192      ;
+; -6.234 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.270      ;
+; -6.184 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.220      ;
+; -6.128 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.164      ;
+; -6.097 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.133      ;
+; -6.074 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 7.111      ;
+; -6.033 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 7.069      ;
+; -5.938 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 5.811      ;
+; -5.922 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 6.958      ;
+; -5.910 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 6.947      ;
+; -5.899 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 6.935      ;
+; -5.858 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 6.894      ;
+; -5.774 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 5.647      ;
+; -5.763 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 6.799      ;
+; -5.759 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 6.795      ;
+; -5.624 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.500        ; 2.436      ; 8.596      ;
+; -5.374 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 9.509      ;
+; -5.351 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.500        ; 3.600      ; 9.487      ;
+; -5.340 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 9.475      ;
+; -5.310 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 9.445      ;
+; -5.204 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 9.339      ;
+; -5.124 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 2.436      ; 8.596      ;
+; -5.042 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 5.832      ;
+; -4.874 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 9.509      ;
+; -4.851 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 3.600      ; 9.487      ;
+; -4.840 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 9.475      ;
+; -4.810 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 9.445      ;
+; -4.792 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 6.745      ;
+; -4.769 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 6.723      ;
+; -4.758 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 6.711      ;
+; -4.728 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 6.681      ;
+; -4.704 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 9.339      ;
+; -4.622 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 6.575      ;
+; -3.516 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 4.306      ;
+; -3.266 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.219      ;
+; -3.243 ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 5.197      ;
+; -3.232 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.185      ;
+; -3.202 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.155      ;
+; -3.096 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.049      ;
+; -2.361 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.397      ;
+; -1.380 ; Counter:counter1|CON            ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.416      ;
+; 3.729  ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.500        ; 3.600      ; 0.657      ;
+; 4.229  ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 3.600      ; 0.657      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Counter:counter1|BON'                                                                                                                          ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -6.374 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 7.410      ;
+; -6.319 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.438      ;
+; -6.289 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 7.325      ;
+; -6.263 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.382      ;
+; -6.234 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.353      ;
+; -6.178 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.297      ;
+; -6.062 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.181      ;
+; -5.977 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.096      ;
+; -5.898 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 6.017      ;
+; -5.813 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 5.932      ;
+; -5.339 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 2.682      ; 8.557      ;
+; -5.254 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 2.682      ; 8.472      ;
+; -4.839 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 2.682      ; 8.557      ;
+; -4.754 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 2.682      ; 8.472      ;
+; -3.231 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 4.267      ;
+; -3.146 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 4.182      ;
+; -1.229 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.265      ;
+; -1.144 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.180      ;
+; -1.127 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.163      ;
+; -0.968 ; Counter:counter1|CON            ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.246      ; 2.250      ;
+; -0.741 ; Counter:counter1|CON            ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.246      ; 2.023      ;
+; -0.466 ; Counter:counter1|CON            ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.246      ; 1.748      ;
+; 1.672  ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 2.682      ; 1.796      ;
+; 2.172  ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 2.682      ; 1.796      ;
+; 2.189  ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 2.682      ; 1.279      ;
+; 2.351  ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 2.682      ; 1.117      ;
+; 2.689  ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 2.682      ; 1.279      ;
+; 2.851  ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 2.682      ; 1.117      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'SW[1]'                                                                                                                                 ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -3.459 ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 3.600      ; 0.657      ;
+; -2.959 ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; -0.500       ; 3.600      ; 0.657      ;
+; 0.571  ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 2.436      ; 3.273      ;
+; 0.990  ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 4.855      ;
+; 1.071  ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; -0.500       ; 2.436      ; 3.273      ;
+; 1.126  ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 3.600      ; 4.992      ;
+; 1.160  ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.025      ;
+; 1.246  ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.111      ;
+; 1.255  ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.120      ;
+; 1.490  ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 4.855      ;
+; 1.626  ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; -0.500       ; 3.600      ; 4.992      ;
+; 1.660  ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.025      ;
+; 1.746  ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.111      ;
+; 1.755  ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.120      ;
+; 2.150  ; Counter:counter1|CON            ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.416      ;
+; 2.525  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 3.708      ;
+; 2.661  ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 3.845      ;
+; 2.695  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 3.878      ;
+; 2.781  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 3.964      ;
+; 2.790  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 3.973      ;
+; 2.865  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 1.968      ;
+; 2.916  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.182      ;
+; 2.920  ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 2.940      ;
+; 2.930  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.196      ;
+; 2.962  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.228      ;
+; 3.011  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 3.278      ;
+; 3.097  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 3.364      ;
+; 3.131  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.397      ;
+; 3.167  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.433      ;
+; 3.199  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 2.302      ;
+; 3.226  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.492      ;
+; 3.236  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.502      ;
+; 3.255  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 3.522      ;
+; 3.267  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.533      ;
+; 3.290  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.556      ;
+; 3.300  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.566      ;
+; 3.335  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 3.602      ;
+; 3.387  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 2.490      ;
+; 3.551  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 2.654      ;
+; 3.594  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.777      ;
+; 3.698  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.881      ;
+; 3.736  ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 3.756      ;
+; 3.801  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.984      ;
+; 3.832  ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 5.016      ;
+; 3.866  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 5.049      ;
+; 5.120  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 6.303      ;
+; 5.224  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 6.407      ;
+; 5.262  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 5.282      ;
+; 5.327  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 6.510      ;
+; 5.358  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 6.542      ;
+; 5.392  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 6.575      ;
+; 6.533  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 6.799      ;
+; 6.682  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 6.948      ;
+; 6.730  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 6.996      ;
+; 6.786  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 7.052      ;
+; 6.898  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 7.164      ;
+; 6.954  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 7.220      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Counter:counter1|BON'                                                                                                                           ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -2.084 ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 2.682      ; 1.114      ;
+; -2.081 ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 2.682      ; 1.117      ;
+; -1.919 ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 2.682      ; 1.279      ;
+; -1.584 ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 2.682      ; 1.114      ;
+; -1.581 ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 2.682      ; 1.117      ;
+; -1.419 ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 2.682      ; 1.279      ;
+; 0.391  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.657      ;
+; 0.936  ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.202      ;
+; 1.130  ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 2.682      ; 4.078      ;
+; 1.236  ; Counter:counter1|CON            ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.246      ; 1.748      ;
+; 1.306  ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 2.682      ; 4.254      ;
+; 1.414  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.680      ;
+; 1.511  ; Counter:counter1|CON            ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.246      ; 2.023      ;
+; 1.606  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.872      ;
+; 1.630  ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 2.682      ; 4.078      ;
+; 1.712  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.978      ;
+; 1.738  ; Counter:counter1|CON            ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.246      ; 2.250      ;
+; 1.806  ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 2.682      ; 4.254      ;
+; 1.888  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 2.154      ;
+; 2.665  ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 2.931      ;
+; 6.381  ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 5.730      ;
+; 6.545  ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 5.894      ;
+; 6.557  ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 5.906      ;
+; 6.721  ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 6.070      ;
+; 6.746  ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 6.095      ;
+; 6.802  ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 6.151      ;
+; 6.922  ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 6.271      ;
+; 6.978  ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 6.327      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'SW[1]'                                                                                                                             ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -4.681 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 5.471      ;
+; -4.626 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 4.499      ;
+; -4.570 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 4.443      ;
+; -4.369 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 4.242      ;
+; -4.205 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -1.163     ; 4.078      ;
+; -3.910 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.863      ;
+; -3.910 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.863      ;
+; -3.910 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.863      ;
+; -3.910 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 5.863      ;
+; -3.896 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 5.850      ;
+; -3.855 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.891      ;
+; -3.855 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.891      ;
+; -3.855 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.891      ;
+; -3.855 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.891      ;
+; -3.841 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 4.878      ;
+; -3.799 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.835      ;
+; -3.799 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.835      ;
+; -3.799 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.835      ;
+; -3.799 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.835      ;
+; -3.785 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 4.822      ;
+; -3.646 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.500        ; 2.436      ; 6.618      ;
+; -3.598 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.634      ;
+; -3.598 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.634      ;
+; -3.598 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.634      ;
+; -3.598 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.634      ;
+; -3.584 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 4.621      ;
+; -3.434 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.470      ;
+; -3.434 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.470      ;
+; -3.434 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.470      ;
+; -3.434 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 4.470      ;
+; -3.420 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.001      ; 4.457      ;
+; -3.146 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 2.436      ; 6.618      ;
+; -3.064 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 3.854      ;
+; -2.875 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 7.010      ;
+; -2.875 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 7.010      ;
+; -2.875 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 7.010      ;
+; -2.875 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 3.599      ; 7.010      ;
+; -2.861 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.500        ; 3.600      ; 6.997      ;
+; -2.375 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 7.010      ;
+; -2.375 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 7.010      ;
+; -2.375 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 7.010      ;
+; -2.375 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 3.599      ; 7.010      ;
+; -2.361 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 3.600      ; 6.997      ;
+; -2.293 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 4.246      ;
+; -2.293 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 4.246      ;
+; -2.293 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 4.246      ;
+; -2.293 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 4.246      ;
+; -2.279 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 4.233      ;
+; -1.538 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.246     ; 2.328      ;
+; -0.767 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 2.720      ;
+; -0.767 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 2.720      ;
+; -0.767 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 2.720      ;
+; -0.767 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.917      ; 2.720      ;
+; -0.753 ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.918      ; 2.707      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'Counter:counter1|BON'                                                                                                                       ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -4.435 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 5.471      ;
+; -4.435 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 5.471      ;
+; -4.432 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 5.468      ;
+; -4.380 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.499      ;
+; -4.380 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.499      ;
+; -4.377 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.496      ;
+; -4.324 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.443      ;
+; -4.324 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.443      ;
+; -4.321 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.440      ;
+; -4.123 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.242      ;
+; -4.123 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.242      ;
+; -4.120 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.239      ;
+; -3.959 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.078      ;
+; -3.959 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.078      ;
+; -3.956 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.917     ; 4.075      ;
+; -3.400 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 2.682      ; 6.618      ;
+; -3.400 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 2.682      ; 6.618      ;
+; -3.397 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 2.682      ; 6.615      ;
+; -2.900 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 2.682      ; 6.618      ;
+; -2.900 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 2.682      ; 6.618      ;
+; -2.897 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 2.682      ; 6.615      ;
+; -2.818 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 3.854      ;
+; -2.818 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 3.854      ;
+; -2.815 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 3.851      ;
+; -1.292 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.328      ;
+; -1.292 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.328      ;
+; -1.289 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.325      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'SW[1]'                                                                                                                             ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; 1.374 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 3.600      ; 5.240      ;
+; 1.388 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.253      ;
+; 1.388 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.253      ;
+; 1.388 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.253      ;
+; 1.388 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 3.599      ; 5.253      ;
+; 1.523 ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 2.707      ;
+; 1.537 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 2.720      ;
+; 1.537 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 2.720      ;
+; 1.537 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 2.720      ;
+; 1.537 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 2.720      ;
+; 1.874 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; -0.500       ; 3.600      ; 5.240      ;
+; 1.888 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.253      ;
+; 1.888 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.253      ;
+; 1.888 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.253      ;
+; 1.888 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 3.599      ; 5.253      ;
+; 2.159 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 2.436      ; 4.861      ;
+; 2.308 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 2.328      ;
+; 2.659 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; -0.500       ; 2.436      ; 4.861      ;
+; 3.049 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 4.233      ;
+; 3.063 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.246      ;
+; 3.063 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.246      ;
+; 3.063 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.246      ;
+; 3.063 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.246      ;
+; 3.247 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.918      ; 4.431      ;
+; 3.264 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.447      ;
+; 3.264 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.447      ;
+; 3.264 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.447      ;
+; 3.264 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.917      ; 4.447      ;
+; 3.834 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 3.854      ;
+; 4.032 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.246     ; 4.052      ;
+; 4.190 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 4.457      ;
+; 4.204 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.470      ;
+; 4.204 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.470      ;
+; 4.204 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.470      ;
+; 4.204 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.470      ;
+; 4.354 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 4.621      ;
+; 4.368 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.634      ;
+; 4.368 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.634      ;
+; 4.368 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.634      ;
+; 4.368 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.634      ;
+; 4.555 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 4.822      ;
+; 4.569 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.835      ;
+; 4.569 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.835      ;
+; 4.569 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.835      ;
+; 4.569 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.835      ;
+; 4.611 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.001      ; 4.878      ;
+; 4.625 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.891      ;
+; 4.625 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.891      ;
+; 4.625 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.891      ;
+; 4.625 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 4.891      ;
+; 4.975 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 4.078      ;
+; 5.139 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 4.242      ;
+; 5.340 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 4.443      ;
+; 5.396 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -1.163     ; 4.499      ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'Counter:counter1|BON'                                                                                                                       ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 1.910 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 2.682      ; 4.858      ;
+; 1.913 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 2.682      ; 4.861      ;
+; 1.913 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 2.682      ; 4.861      ;
+; 2.059 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 2.325      ;
+; 2.062 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 2.328      ;
+; 2.062 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 2.328      ;
+; 2.410 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 2.682      ; 4.858      ;
+; 2.413 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 2.682      ; 4.861      ;
+; 2.413 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 2.682      ; 4.861      ;
+; 3.585 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 3.851      ;
+; 3.588 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 3.854      ;
+; 3.588 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 3.854      ;
+; 3.786 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 4.052      ;
+; 3.786 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 4.052      ;
+; 3.786 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 4.052      ;
+; 4.726 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.075      ;
+; 4.729 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.078      ;
+; 4.729 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.078      ;
+; 4.890 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.239      ;
+; 4.893 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.242      ;
+; 4.893 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.242      ;
+; 5.091 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.440      ;
+; 5.094 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.443      ;
+; 5.094 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.443      ;
+; 5.147 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.496      ;
+; 5.150 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.499      ;
+; 5.150 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.917     ; 4.499      ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'SW[1]'                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; SW[1] ; Rise       ; SW[1]                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|BON                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|BON                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|CON                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|CON                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[0]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[0]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[2]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[2]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[3]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[3]~_emulated         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; SW[1]|combout                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; SW[1]|combout                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|BON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|BON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|CON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|CON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[0]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[0]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[2]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[2]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[3]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[3]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Counter:counter1|BON'                                                                                  ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter1|BON|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter1|BON|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; 5.989 ; 5.989 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; 5.989 ; 5.989 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; 5.839 ; 5.839 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 6.274 ; 6.274 ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 6.274 ; 6.274 ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; 6.124 ; 6.124 ; Rise       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; -1.130 ; -1.130 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; -1.280 ; -1.280 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; -1.130 ; -1.130 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 2.043  ; 2.043  ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 2.043  ; 2.043  ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; -0.571 ; -0.571 ; Rise       ; SW[1]                ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                  ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 13.283 ; 13.283 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 13.268 ; 13.268 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 12.580 ; 12.580 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 13.000 ; 13.000 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 12.868 ; 12.868 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 7.741  ; 7.741  ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 13.283 ; 13.283 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 13.228 ; 13.228 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 13.213 ; 13.213 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 12.525 ; 12.525 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 12.945 ; 12.945 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 13.003 ; 13.003 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 13.228 ; 13.228 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 11.748 ; 11.748 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 11.733 ; 11.733 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 11.045 ; 11.045 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 11.465 ; 11.465 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 11.333 ; 11.333 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 11.748 ; 11.748 ; Fall       ; SW[1]                ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 7.741 ; 7.741 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 8.954 ; 8.954 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 8.264 ; 8.264 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 9.044 ; 9.044 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 9.155 ; 9.155 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 7.741 ; 7.741 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 8.138 ; 8.138 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 6.729 ; 6.729 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 7.419 ; 7.419 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 6.729 ; 6.729 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 7.509 ; 7.509 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 7.620 ; 7.620 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 7.556 ; 7.556 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 6.729 ; 6.729 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 7.419 ; 7.419 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 6.729 ; 6.729 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 7.509 ; 7.509 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 7.620 ; 7.620 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 7.556 ; 7.556 ; Fall       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++------------------------------------------------------------+
+; Propagation Delay                                          ;
++------------+-------------+--------+-------+-------+--------+
+; Input Port ; Output Port ; RR     ; RF    ; FR    ; FF     ;
++------------+-------------+--------+-------+-------+--------+
+; SW[0]      ; LEDR[0]     ; 11.883 ; 8.936 ; 8.936 ; 11.883 ;
+; SW[0]      ; LEDR[1]     ; 11.195 ; 8.248 ; 8.248 ; 11.195 ;
+; SW[0]      ; LEDR[2]     ; 11.615 ; 8.668 ; 8.668 ; 11.615 ;
+; SW[0]      ; LEDR[3]     ; 11.483 ; 8.782 ; 8.782 ; 11.483 ;
+; SW[0]      ; LEDR[5]     ; 11.898 ; 8.951 ; 8.951 ; 11.898 ;
++------------+-------------+--------+-------+-------+--------+
+
+
++------------------------------------------------------------+
+; Minimum Propagation Delay                                  ;
++------------+-------------+--------+-------+-------+--------+
+; Input Port ; Output Port ; RR     ; RF    ; FR    ; FF     ;
++------------+-------------+--------+-------+-------+--------+
+; SW[0]      ; LEDR[0]     ; 10.970 ; 7.569 ; 7.569 ; 10.970 ;
+; SW[0]      ; LEDR[1]     ; 10.447 ; 6.879 ; 6.879 ; 10.447 ;
+; SW[0]      ; LEDR[2]     ; 10.702 ; 7.659 ; 7.659 ; 10.702 ;
+; SW[0]      ; LEDR[3]     ; 10.816 ; 7.770 ; 7.770 ; 10.816 ;
+; SW[0]      ; LEDR[5]     ; 10.985 ; 7.706 ; 7.706 ; 10.985 ;
++------------+-------------+--------+-------+-------+--------+
+
+
++-----------------------------------------------+
+; Fast Model Setup Summary                      ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -2.675 ; -13.831       ;
+; Counter:counter1|BON ; -2.326 ; -4.637        ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -2.011 ; -2.011        ;
+; Counter:counter1|BON ; -1.324 ; -3.891        ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Recovery Summary                   ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -1.899 ; -8.308        ;
+; Counter:counter1|BON ; -1.624 ; -4.872        ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------+
+; Fast Model Removal Summary                   ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; SW[1]                ; 0.327 ; 0.000         ;
+; Counter:counter1|BON ; 0.674 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; SW[1]                ; -1.380 ; -7.380        ;
+; Counter:counter1|BON ; -0.500 ; -3.000        ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'SW[1]'                                                                                                                                ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -2.675 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.919      ;
+; -2.661 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.905      ;
+; -2.577 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 3.334      ;
+; -2.335 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.579      ;
+; -2.265 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.509      ;
+; -2.244 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.276      ;
+; -2.243 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.275      ;
+; -2.238 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.270      ;
+; -2.230 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.262      ;
+; -2.225 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.257      ;
+; -2.224 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.256      ;
+; -2.221 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.253      ;
+; -2.210 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.242      ;
+; -2.207 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.239      ;
+; -2.196 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.228      ;
+; -2.146 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 3.691      ;
+; -2.145 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 3.690      ;
+; -2.140 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 3.685      ;
+; -2.123 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 3.668      ;
+; -2.118 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.500        ; 1.297      ; 3.947      ;
+; -2.112 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 3.657      ;
+; -2.100 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.132      ;
+; -2.095 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.127      ;
+; -2.067 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.099      ;
+; -2.031 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.063      ;
+; -2.030 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.062      ;
+; -2.023 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.055      ;
+; -2.008 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.040      ;
+; -1.995 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.027      ;
+; -1.975 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 3.007      ;
+; -1.866 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 2.623      ;
+; -1.687 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 4.304      ;
+; -1.686 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 4.303      ;
+; -1.681 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 4.298      ;
+; -1.664 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 4.281      ;
+; -1.653 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 4.270      ;
+; -1.618 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 1.297      ; 3.947      ;
+; -1.435 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.980      ;
+; -1.434 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.979      ;
+; -1.429 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.974      ;
+; -1.412 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.957      ;
+; -1.401 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.946      ;
+; -1.194 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 1.951      ;
+; -1.187 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 4.304      ;
+; -1.186 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 4.303      ;
+; -1.181 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 4.298      ;
+; -1.164 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 4.281      ;
+; -1.153 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 4.270      ;
+; -0.763 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.308      ;
+; -0.762 ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.307      ;
+; -0.757 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.302      ;
+; -0.740 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.285      ;
+; -0.729 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.274      ;
+; -0.528 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 1.560      ;
+; -0.078 ; Counter:counter1|CON            ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 1.110      ;
+; 2.391  ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.500        ; 2.085      ; 0.367      ;
+; 2.891  ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 2.085      ; 0.367      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Counter:counter1|BON'                                                                                                                          ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -2.326 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.845      ;
+; -2.312 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.831      ;
+; -2.311 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.830      ;
+; -2.297 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.816      ;
+; -2.228 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 3.260      ;
+; -2.213 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 3.245      ;
+; -2.183 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.702      ;
+; -2.168 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.687      ;
+; -2.113 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.632      ;
+; -2.098 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.617      ;
+; -1.769 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 1.572      ; 3.873      ;
+; -1.754 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 1.572      ; 3.858      ;
+; -1.269 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 1.572      ; 3.873      ;
+; -1.254 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 1.572      ; 3.858      ;
+; -0.845 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.877      ;
+; -0.830 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.862      ;
+; 0.039  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 0.993      ;
+; 0.054  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 0.978      ;
+; 0.055  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 0.977      ;
+; 0.307  ; Counter:counter1|CON            ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.275      ; 1.000      ;
+; 0.395  ; Counter:counter1|CON            ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.275      ; 0.912      ;
+; 0.505  ; Counter:counter1|CON            ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 0.275      ; 0.802      ;
+; 1.387  ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 1.572      ; 0.858      ;
+; 1.626  ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 1.572      ; 0.619      ;
+; 1.701  ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.500        ; 1.572      ; 0.544      ;
+; 1.887  ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 1.572      ; 0.858      ;
+; 2.126  ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 1.572      ; 0.619      ;
+; 2.201  ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 1.572      ; 0.544      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'SW[1]'                                                                                                                                 ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -2.011 ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 2.085      ; 0.367      ;
+; -1.511 ; Counter:counter1|BON            ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; -0.500       ; 2.085      ; 0.367      ;
+; 0.023  ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.260      ;
+; 0.086  ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.323      ;
+; 0.115  ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.352      ;
+; 0.124  ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.361      ;
+; 0.151  ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.388      ;
+; 0.152  ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 1.297      ; 1.601      ;
+; 0.523  ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.260      ;
+; 0.586  ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.323      ;
+; 0.615  ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.352      ;
+; 0.624  ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.361      ;
+; 0.651  ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.388      ;
+; 0.652  ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; -0.500       ; 1.297      ; 1.601      ;
+; 0.958  ; Counter:counter1|CON            ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.110      ;
+; 0.982  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.647      ;
+; 1.045  ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.710      ;
+; 1.074  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.739      ;
+; 1.083  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.748      ;
+; 1.110  ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.775      ;
+; 1.267  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.419      ;
+; 1.283  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.435      ;
+; 1.285  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.437      ;
+; 1.322  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.474      ;
+; 1.343  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.495      ;
+; 1.344  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.496      ;
+; 1.372  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.524      ;
+; 1.375  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.527      ;
+; 1.385  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.537      ;
+; 1.400  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.552      ;
+; 1.403  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.555      ;
+; 1.404  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.556      ;
+; 1.408  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.560      ;
+; 1.430  ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 1.307      ;
+; 1.445  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 1.597      ;
+; 1.464  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.129      ;
+; 1.517  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.182      ;
+; 1.528  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 0.892      ;
+; 1.541  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.206      ;
+; 1.578  ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.243      ;
+; 1.643  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.308      ;
+; 1.680  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 1.044      ;
+; 1.769  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 1.133      ;
+; 1.813  ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 1.690      ;
+; 1.839  ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 1.203      ;
+; 2.136  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.801      ;
+; 2.189  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.854      ;
+; 2.213  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.878      ;
+; 2.250  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.915      ;
+; 2.315  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.980      ;
+; 2.485  ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 2.362      ;
+; 2.911  ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.063      ;
+; 2.945  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.097      ;
+; 2.984  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.136      ;
+; 2.998  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.150      ;
+; 3.110  ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.262      ;
+; 3.124  ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 3.276      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Counter:counter1|BON'                                                                                                                           ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -1.324 ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 1.572      ; 0.541      ;
+; -1.321 ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 1.572      ; 0.544      ;
+; -1.246 ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 1.572      ; 0.619      ;
+; -0.824 ; Counter:counter1|BON            ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 1.572      ; 0.541      ;
+; -0.821 ; Counter:counter1|BON            ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 1.572      ; 0.544      ;
+; -0.746 ; Counter:counter1|BON            ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; -0.500       ; 1.572      ; 0.619      ;
+; 0.190  ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 1.572      ; 1.914      ;
+; 0.215  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.367      ;
+; 0.265  ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 1.572      ; 1.989      ;
+; 0.375  ; Counter:counter1|CON            ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.275      ; 0.802      ;
+; 0.417  ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.569      ;
+; 0.485  ; Counter:counter1|CON            ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.275      ; 0.912      ;
+; 0.573  ; Counter:counter1|CON            ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 0.275      ; 1.000      ;
+; 0.625  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.777      ;
+; 0.690  ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 1.572      ; 1.914      ;
+; 0.713  ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.865      ;
+; 0.747  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.899      ;
+; 0.765  ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 1.572      ; 1.989      ;
+; 0.822  ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 0.974      ;
+; 1.149  ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.301      ;
+; 2.899  ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.538      ;
+; 2.969  ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.608      ;
+; 2.974  ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.613      ;
+; 3.044  ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.683      ;
+; 3.098  ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.737      ;
+; 3.112  ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.751      ;
+; 3.173  ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.812      ;
+; 3.187  ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.826      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'SW[1]'                                                                                                                             ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; -1.899 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.143      ;
+; -1.885 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.129      ;
+; -1.801 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 2.558      ;
+; -1.756 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 2.000      ;
+; -1.686 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; -0.788     ; 1.930      ;
+; -1.342 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.500        ; 1.297      ; 3.171      ;
+; -1.283 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.315      ;
+; -1.283 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.315      ;
+; -1.283 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.315      ;
+; -1.283 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.315      ;
+; -1.277 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.309      ;
+; -1.269 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.301      ;
+; -1.269 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.301      ;
+; -1.269 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.301      ;
+; -1.269 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.301      ;
+; -1.263 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.295      ;
+; -1.185 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.730      ;
+; -1.185 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.730      ;
+; -1.185 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.730      ;
+; -1.185 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.730      ;
+; -1.179 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.724      ;
+; -1.140 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.172      ;
+; -1.140 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.172      ;
+; -1.140 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.172      ;
+; -1.140 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.172      ;
+; -1.134 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.166      ;
+; -1.090 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 1.847      ;
+; -1.070 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.102      ;
+; -1.070 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.102      ;
+; -1.070 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.102      ;
+; -1.070 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.102      ;
+; -1.064 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 0.000      ; 2.096      ;
+; -0.842 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 1.000        ; 1.297      ; 3.171      ;
+; -0.726 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 3.343      ;
+; -0.726 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 3.343      ;
+; -0.726 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 3.343      ;
+; -0.726 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 3.343      ;
+; -0.720 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.500        ; 2.085      ; 3.337      ;
+; -0.474 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.019      ;
+; -0.474 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.019      ;
+; -0.474 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.019      ;
+; -0.474 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.019      ;
+; -0.468 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 2.013      ;
+; -0.418 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; -0.275     ; 1.175      ;
+; -0.226 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 3.343      ;
+; -0.226 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 3.343      ;
+; -0.226 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 3.343      ;
+; -0.226 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 3.343      ;
+; -0.220 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 1.000        ; 2.085      ; 3.337      ;
+; 0.198  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 1.347      ;
+; 0.198  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 1.347      ;
+; 0.198  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 1.347      ;
+; 0.198  ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 1.347      ;
+; 0.204  ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 1.000        ; 0.513      ; 1.341      ;
++--------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'Counter:counter1|BON'                                                                                                                       ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -1.624 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.143      ;
+; -1.624 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.143      ;
+; -1.624 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.143      ;
+; -1.610 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.129      ;
+; -1.610 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.129      ;
+; -1.610 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.129      ;
+; -1.526 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.558      ;
+; -1.526 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.558      ;
+; -1.526 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 2.558      ;
+; -1.481 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.000      ;
+; -1.481 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.000      ;
+; -1.481 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 2.000      ;
+; -1.411 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 1.930      ;
+; -1.411 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 1.930      ;
+; -1.411 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; -0.513     ; 1.930      ;
+; -1.067 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 1.572      ; 3.171      ;
+; -1.067 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 1.572      ; 3.171      ;
+; -1.067 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.500        ; 1.572      ; 3.171      ;
+; -0.815 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.847      ;
+; -0.815 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.847      ;
+; -0.815 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.847      ;
+; -0.567 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 1.572      ; 3.171      ;
+; -0.567 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 1.572      ; 3.171      ;
+; -0.567 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 1.000        ; 1.572      ; 3.171      ;
+; -0.143 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.175      ;
+; -0.143 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.175      ;
+; -0.143 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 1.000        ; 0.000      ; 1.175      ;
++--------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'SW[1]'                                                                                                                             ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+; 0.327 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.564      ;
+; 0.333 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.570      ;
+; 0.333 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.570      ;
+; 0.333 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.570      ;
+; 0.333 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 2.085      ; 2.570      ;
+; 0.676 ; Counter:counter2|Q[0]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.341      ;
+; 0.682 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.347      ;
+; 0.682 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.347      ;
+; 0.682 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.347      ;
+; 0.682 ; Counter:counter2|Q[0]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 1.347      ;
+; 0.827 ; SW[1]                           ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.564      ;
+; 0.833 ; SW[1]                           ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.570      ;
+; 0.833 ; SW[1]                           ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.570      ;
+; 0.833 ; SW[1]                           ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.570      ;
+; 0.833 ; SW[1]                           ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; -0.500       ; 2.085      ; 2.570      ;
+; 0.949 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; 1.297      ; 2.398      ;
+; 1.298 ; Counter:counter2|Q[0]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 1.175      ;
+; 1.348 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.013      ;
+; 1.354 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.019      ;
+; 1.354 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.019      ;
+; 1.354 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.019      ;
+; 1.354 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.019      ;
+; 1.449 ; SW[1]                           ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; -0.500       ; 1.297      ; 2.398      ;
+; 1.481 ; Counter:counter2|Q[2]           ; Counter:counter1|BON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.146      ;
+; 1.484 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.149      ;
+; 1.484 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.149      ;
+; 1.484 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.149      ;
+; 1.484 ; Counter:counter2|Q[2]           ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON ; SW[1]       ; 0.000        ; 0.513      ; 2.149      ;
+; 1.944 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.096      ;
+; 1.950 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.102      ;
+; 1.950 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.102      ;
+; 1.950 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.102      ;
+; 1.950 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.102      ;
+; 1.970 ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 1.847      ;
+; 2.014 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.166      ;
+; 2.020 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.172      ;
+; 2.020 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.172      ;
+; 2.020 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.172      ;
+; 2.020 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.172      ;
+; 2.103 ; Counter:counter2|Q[2]           ; Counter:counter1|CON            ; Counter:counter1|BON ; SW[1]       ; 0.000        ; -0.275     ; 1.980      ;
+; 2.143 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.295      ;
+; 2.149 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.301      ;
+; 2.149 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.301      ;
+; 2.149 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.301      ;
+; 2.149 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.301      ;
+; 2.157 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|BON            ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.309      ;
+; 2.163 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[0]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.315      ;
+; 2.163 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[2]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.315      ;
+; 2.163 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[3]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.315      ;
+; 2.163 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|Q[1]~_emulated ; SW[1]                ; SW[1]       ; 0.000        ; 0.000      ; 2.315      ;
+; 2.566 ; Counter:counter1|Q[1]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 1.930      ;
+; 2.636 ; Counter:counter1|Q[0]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 2.000      ;
+; 2.765 ; Counter:counter1|Q[2]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 2.129      ;
+; 2.779 ; Counter:counter1|Q[3]~_emulated ; Counter:counter1|CON            ; SW[1]                ; SW[1]       ; 0.000        ; -0.788     ; 2.143      ;
++-------+---------------------------------+---------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'Counter:counter1|BON'                                                                                                                       ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.674 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 1.572      ; 2.398      ;
+; 0.674 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 1.572      ; 2.398      ;
+; 0.674 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; 1.572      ; 2.398      ;
+; 1.023 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.175      ;
+; 1.023 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.175      ;
+; 1.023 ; Counter:counter2|Q[0]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.175      ;
+; 1.174 ; SW[1]                           ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 1.572      ; 2.398      ;
+; 1.174 ; SW[1]                           ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 1.572      ; 2.398      ;
+; 1.174 ; SW[1]                           ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; -0.500       ; 1.572      ; 2.398      ;
+; 1.695 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.847      ;
+; 1.695 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.847      ;
+; 1.695 ; Counter:counter2|Q[1]~_emulated ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.847      ;
+; 1.825 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[1]~_emulated ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.977      ;
+; 1.828 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[0]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.980      ;
+; 1.828 ; Counter:counter2|Q[2]           ; Counter:counter2|Q[2]           ; Counter:counter1|BON ; Counter:counter1|BON ; 0.000        ; 0.000      ; 1.980      ;
+; 2.291 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 1.930      ;
+; 2.291 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 1.930      ;
+; 2.291 ; Counter:counter1|Q[1]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 1.930      ;
+; 2.361 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.000      ;
+; 2.361 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.000      ;
+; 2.361 ; Counter:counter1|Q[0]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.000      ;
+; 2.490 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.129      ;
+; 2.490 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.129      ;
+; 2.490 ; Counter:counter1|Q[2]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.129      ;
+; 2.504 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[1]~_emulated ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.143      ;
+; 2.504 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[0]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.143      ;
+; 2.504 ; Counter:counter1|Q[3]~_emulated ; Counter:counter2|Q[2]           ; SW[1]                ; Counter:counter1|BON ; 0.000        ; -0.513     ; 2.143      ;
++-------+---------------------------------+---------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'SW[1]'                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; SW[1] ; Rise       ; SW[1]                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|BON                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|BON                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|CON                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|CON                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[0]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[0]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[2]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[2]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[1] ; Rise       ; Counter:counter1|Q[3]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[1] ; Rise       ; Counter:counter1|Q[3]~_emulated         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; SW[1]|combout                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; SW[1]|combout                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|BON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|BON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|CON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|CON|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[0]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[0]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[2]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[2]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|Q[3]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|Q[3]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[1] ; Rise       ; counter1|internalClock~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Counter:counter1|BON'                                                                                  ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[1]~_emulated         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; Counter:counter2|Q[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter1|BON|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter1|BON|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[1]~_emulated|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|Q[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|Q[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Counter:counter1|BON ; Rise       ; counter2|internalClock~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+----------------------+------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; 2.328 ; 2.328 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; 2.328 ; 2.328 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; 2.269 ; 2.269 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 2.677 ; 2.677 ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 2.677 ; 2.677 ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; 2.618 ; 2.618 ; Rise       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; -0.190 ; -0.190 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; -0.249 ; -0.249 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; -0.190 ; -0.190 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 1.298  ; 1.298  ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 1.298  ; 1.298  ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; -0.023 ; -0.023 ; Rise       ; SW[1]                ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 6.678 ; 6.678 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 6.678 ; 6.678 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 6.385 ; 6.385 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 6.533 ; 6.533 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 6.485 ; 6.485 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 4.227 ; 4.227 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 6.661 ; 6.661 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 6.776 ; 6.776 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 6.776 ; 6.776 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 6.483 ; 6.483 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 6.631 ; 6.631 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 6.669 ; 6.669 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 6.759 ; 6.759 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 5.719 ; 5.719 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 5.719 ; 5.719 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 5.426 ; 5.426 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 5.574 ; 5.574 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 5.526 ; 5.526 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 5.702 ; 5.702 ; Fall       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 4.227 ; 4.227 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 4.762 ; 4.762 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 4.467 ; 4.467 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 4.769 ; 4.769 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 4.819 ; 4.819 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 4.227 ; 4.227 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 4.394 ; 4.394 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 3.508 ; 3.508 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 3.803 ; 3.803 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 3.508 ; 3.508 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 3.810 ; 3.810 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 3.860 ; 3.860 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 3.837 ; 3.837 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 3.508 ; 3.508 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 3.803 ; 3.803 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 3.508 ; 3.508 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 3.810 ; 3.810 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 3.860 ; 3.860 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 3.837 ; 3.837 ; Fall       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 5.778 ; 4.457 ; 4.457 ; 5.778 ;
+; SW[0]      ; LEDR[1]     ; 5.485 ; 4.164 ; 4.164 ; 5.485 ;
+; SW[0]      ; LEDR[2]     ; 5.633 ; 4.312 ; 4.312 ; 5.633 ;
+; SW[0]      ; LEDR[3]     ; 5.585 ; 4.364 ; 4.364 ; 5.585 ;
+; SW[0]      ; LEDR[5]     ; 5.761 ; 4.440 ; 4.440 ; 5.761 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 5.362 ; 3.862 ; 3.862 ; 5.362 ;
+; SW[0]      ; LEDR[1]     ; 5.142 ; 3.567 ; 3.567 ; 5.142 ;
+; SW[0]      ; LEDR[2]     ; 5.217 ; 3.869 ; 3.869 ; 5.217 ;
+; SW[0]      ; LEDR[3]     ; 5.269 ; 3.919 ; 3.919 ; 5.269 ;
+; SW[0]      ; LEDR[5]     ; 5.345 ; 3.896 ; 3.896 ; 5.345 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                 ;
++-----------------------+---------+--------+----------+---------+---------------------+
+; Clock                 ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack      ; -6.659  ; -3.459 ; -4.681   ; 0.327   ; -1.380              ;
+;  Counter:counter1|BON ; -6.374  ; -2.084 ; -4.435   ; 0.674   ; -0.500              ;
+;  SW[1]                ; -6.659  ; -3.459 ; -4.681   ; 0.327   ; -1.380              ;
+; Design-wide TNS       ; -52.203 ; -9.543 ; -37.519  ; 0.0     ; -10.38              ;
+;  Counter:counter1|BON ; -13.790 ; -6.084 ; -13.302  ; 0.000   ; -3.000              ;
+;  SW[1]                ; -38.413 ; -3.459 ; -24.217  ; 0.000   ; -7.380              ;
++-----------------------+---------+--------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; 5.989 ; 5.989 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; 5.989 ; 5.989 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; 5.839 ; 5.839 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 6.274 ; 6.274 ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 6.274 ; 6.274 ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; 6.124 ; 6.124 ; Rise       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; SW[*]     ; Counter:counter1|BON ; -0.190 ; -0.190 ; Rise       ; Counter:counter1|BON ;
+;  SW[0]    ; Counter:counter1|BON ; -0.249 ; -0.249 ; Rise       ; Counter:counter1|BON ;
+;  SW[1]    ; Counter:counter1|BON ; -0.190 ; -0.190 ; Rise       ; Counter:counter1|BON ;
+; SW[*]     ; SW[1]                ; 2.043  ; 2.043  ; Rise       ; SW[1]                ;
+;  SW[0]    ; SW[1]                ; 2.043  ; 2.043  ; Rise       ; SW[1]                ;
+;  SW[1]    ; SW[1]                ; -0.023 ; -0.023 ; Rise       ; SW[1]                ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                  ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 13.283 ; 13.283 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 13.268 ; 13.268 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 12.580 ; 12.580 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 13.000 ; 13.000 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 12.868 ; 12.868 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 7.741  ; 7.741  ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 13.283 ; 13.283 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 13.228 ; 13.228 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 13.213 ; 13.213 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 12.525 ; 12.525 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 12.945 ; 12.945 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 13.003 ; 13.003 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 13.228 ; 13.228 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 11.748 ; 11.748 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 11.733 ; 11.733 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 11.045 ; 11.045 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 11.465 ; 11.465 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 11.333 ; 11.333 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 11.748 ; 11.748 ; Fall       ; SW[1]                ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; LEDR[*]   ; Counter:counter1|BON ; 4.227 ; 4.227 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[0]  ; Counter:counter1|BON ; 4.762 ; 4.762 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[1]  ; Counter:counter1|BON ; 4.467 ; 4.467 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[2]  ; Counter:counter1|BON ; 4.769 ; 4.769 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[3]  ; Counter:counter1|BON ; 4.819 ; 4.819 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[4]  ; Counter:counter1|BON ; 4.227 ; 4.227 ; Rise       ; Counter:counter1|BON ;
+;  LEDR[5]  ; Counter:counter1|BON ; 4.394 ; 4.394 ; Rise       ; Counter:counter1|BON ;
+; LEDR[*]   ; SW[1]                ; 3.508 ; 3.508 ; Rise       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 3.803 ; 3.803 ; Rise       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 3.508 ; 3.508 ; Rise       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 3.810 ; 3.810 ; Rise       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 3.860 ; 3.860 ; Rise       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 3.837 ; 3.837 ; Rise       ; SW[1]                ;
+; LEDR[*]   ; SW[1]                ; 3.508 ; 3.508 ; Fall       ; SW[1]                ;
+;  LEDR[0]  ; SW[1]                ; 3.803 ; 3.803 ; Fall       ; SW[1]                ;
+;  LEDR[1]  ; SW[1]                ; 3.508 ; 3.508 ; Fall       ; SW[1]                ;
+;  LEDR[2]  ; SW[1]                ; 3.810 ; 3.810 ; Fall       ; SW[1]                ;
+;  LEDR[3]  ; SW[1]                ; 3.860 ; 3.860 ; Fall       ; SW[1]                ;
+;  LEDR[5]  ; SW[1]                ; 3.837 ; 3.837 ; Fall       ; SW[1]                ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++------------------------------------------------------------+
+; Progagation Delay                                          ;
++------------+-------------+--------+-------+-------+--------+
+; Input Port ; Output Port ; RR     ; RF    ; FR    ; FF     ;
++------------+-------------+--------+-------+-------+--------+
+; SW[0]      ; LEDR[0]     ; 11.883 ; 8.936 ; 8.936 ; 11.883 ;
+; SW[0]      ; LEDR[1]     ; 11.195 ; 8.248 ; 8.248 ; 11.195 ;
+; SW[0]      ; LEDR[2]     ; 11.615 ; 8.668 ; 8.668 ; 11.615 ;
+; SW[0]      ; LEDR[3]     ; 11.483 ; 8.782 ; 8.782 ; 11.483 ;
+; SW[0]      ; LEDR[5]     ; 11.898 ; 8.951 ; 8.951 ; 11.898 ;
++------------+-------------+--------+-------+-------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 5.362 ; 3.862 ; 3.862 ; 5.362 ;
+; SW[0]      ; LEDR[1]     ; 5.142 ; 3.567 ; 3.567 ; 5.142 ;
+; SW[0]      ; LEDR[2]     ; 5.217 ; 3.869 ; 3.869 ; 5.217 ;
+; SW[0]      ; LEDR[3]     ; 5.269 ; 3.919 ; 3.919 ; 5.269 ;
+; SW[0]      ; LEDR[5]     ; 5.345 ; 3.896 ; 3.896 ; 5.345 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-----------------------------------------------------------------------------------------+
+; Setup Transfers                                                                         ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; Counter:counter1|BON ; Counter:counter1|BON ; 40       ; 4        ; 0        ; 0        ;
+; SW[1]                ; Counter:counter1|BON ; 43       ; 24       ; 0        ; 0        ;
+; Counter:counter1|BON ; SW[1]                ; 120      ; 1        ; 0        ; 0        ;
+; SW[1]                ; SW[1]                ; 183      ; 114      ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Transfers                                                                          ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; Counter:counter1|BON ; Counter:counter1|BON ; 40       ; 4        ; 0        ; 0        ;
+; SW[1]                ; Counter:counter1|BON ; 43       ; 24       ; 0        ; 0        ;
+; Counter:counter1|BON ; SW[1]                ; 120      ; 1        ; 0        ; 0        ;
+; SW[1]                ; SW[1]                ; 183      ; 114      ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                      ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; Counter:counter1|BON ; Counter:counter1|BON ; 24       ; 0        ; 0        ; 0        ;
+; SW[1]                ; Counter:counter1|BON ; 33       ; 21       ; 0        ; 0        ;
+; Counter:counter1|BON ; SW[1]                ; 48       ; 0        ; 0        ; 0        ;
+; SW[1]                ; SW[1]                ; 66       ; 42       ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Removal Transfers                                                                       ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; Counter:counter1|BON ; Counter:counter1|BON ; 24       ; 0        ; 0        ; 0        ;
+; SW[1]                ; Counter:counter1|BON ; 33       ; 21       ; 0        ; 0        ;
+; Counter:counter1|BON ; SW[1]                ; 48       ; 0        ; 0        ; 0        ;
+; SW[1]                ; SW[1]                ; 66       ; 42       ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 20    ; 20   ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 51    ; 51   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Feb  2 21:52:55 2017
+Info: Command: quartus_sta 76193 -c 76193
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: '76193.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SW[1] SW[1]
+    Info (332105): create_clock -period 1.000 -name Counter:counter1|BON Counter:counter1|BON
+Warning (332125): Found combinational loop of 20 nodes
+    Warning (332126): Node "comb~3|combout"
+    Warning (332126): Node "counter1|Q[1]~4|datab"
+    Warning (332126): Node "counter1|Q[1]~4|combout"
+    Warning (332126): Node "comb~1|datac"
+    Warning (332126): Node "comb~1|combout"
+    Warning (332126): Node "comb~3|datab"
+    Warning (332126): Node "counter1|Q[3]~8|datab"
+    Warning (332126): Node "counter1|Q[3]~8|combout"
+    Warning (332126): Node "comb~2|datad"
+    Warning (332126): Node "comb~2|combout"
+    Warning (332126): Node "comb~3|datac"
+    Warning (332126): Node "counter2|Q[1]~0|dataa"
+    Warning (332126): Node "counter2|Q[1]~0|combout"
+    Warning (332126): Node "comb~3|dataa"
+    Warning (332126): Node "counter1|Q[2]~6|datab"
+    Warning (332126): Node "counter1|Q[2]~6|combout"
+    Warning (332126): Node "comb~2|datac"
+    Warning (332126): Node "counter1|Q[0]~2|datab"
+    Warning (332126): Node "counter1|Q[0]~2|combout"
+    Warning (332126): Node "comb~1|dataa"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.659
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.659       -38.413 SW[1] 
+    Info (332119):    -6.374       -13.790 Counter:counter1|BON 
+Info (332146): Worst-case hold slack is -3.459
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.459        -3.459 SW[1] 
+    Info (332119):    -2.084        -6.084 Counter:counter1|BON 
+Info (332146): Worst-case recovery slack is -4.681
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.681       -24.217 SW[1] 
+    Info (332119):    -4.435       -13.302 Counter:counter1|BON 
+Info (332146): Worst-case removal slack is 1.374
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.374         0.000 SW[1] 
+    Info (332119):     1.910         0.000 Counter:counter1|BON 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -7.380 SW[1] 
+    Info (332119):    -0.500        -3.000 Counter:counter1|BON 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.675
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.675       -13.831 SW[1] 
+    Info (332119):    -2.326        -4.637 Counter:counter1|BON 
+Info (332146): Worst-case hold slack is -2.011
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.011        -2.011 SW[1] 
+    Info (332119):    -1.324        -3.891 Counter:counter1|BON 
+Info (332146): Worst-case recovery slack is -1.899
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.899        -8.308 SW[1] 
+    Info (332119):    -1.624        -4.872 Counter:counter1|BON 
+Info (332146): Worst-case removal slack is 0.327
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.327         0.000 SW[1] 
+    Info (332119):     0.674         0.000 Counter:counter1|BON 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -7.380 SW[1] 
+    Info (332119):    -0.500        -3.000 Counter:counter1|BON 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 301 megabytes
+    Info: Processing ended: Thu Feb  2 21:52:56 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
